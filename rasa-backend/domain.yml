@@ -41,6 +41,8 @@ intents:
   - deny_anything_else_el
   - affirm_anything_else_en
   - deny_anything_else_en
+  - change_lang_to_en
+  - change_lang_to_el
 
 actions:
   - action_custom_fallback
@@ -111,6 +113,9 @@ slots:
       - type: from_intent
         value: el
         intent: deny_anything_else_el     # 👈 Προσθήκη στο Slot Mapping
+      - type: from_intent
+        value: el
+        intent: change_lang_to_el
 
       # ==================== ΑΓΓΛΙΚΑ INTENTS ====================
       - type: from_intent
@@ -173,6 +178,9 @@ slots:
       - type: from_intent
         value: en
         intent: deny_anything_else_en     # 👈 Προσθήκη στο Slot Mapping
+      - type: from_intent
+        value: en
+        intent: change_lang_to_en
 
 entities:
   - semester
@@ -183,6 +191,12 @@ responses:
 
   utter_greet_el:
     - text: "Γεια σας! Χαίρομαι που επικοινωνείτε μαζί μας. Τι θα θέλατε να μάθετε;"
+
+  utter_change_lang_to_en:
+    - text: "Yes, of course! We can continue in English. How can I help you?"
+
+  utter_change_lang_to_el:
+    - text: "Φυσικά! Μπορούμε να συνεχίσουμε στα Ελληνικά. Πώς μπορώ να σας βοηθήσω;"
     
   utter_ask_admission_requirements_el:
     - text: "Για την εισαγωγή στο ΠΜΣ απαιτείται πτυχίο Πληροφορικής, Μηχανικών ή συναφών επιστημών, πιστοποιητικό καλής γνώσης Αγγλικών (επίπεδο Β2), αναλυτική βαθμολογία, βιογραφικό σημείωμα και δύο συστατικές επιστολές."

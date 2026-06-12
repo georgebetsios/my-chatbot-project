@@ -82,3 +82,13 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: action_custom_fallback
+
+- rule: Αλλαγή γλώσσας σε Αγγλικά
+  steps:
+  - intent: change_lang_to_en
+  - action: utter_change_lang_to_en
+
+- rule: Αλλαγή γλώσσας σε Ελληνικά
+  steps:
+  - intent: change_lang_to_el
+  - action: utter_change_lang_to_el

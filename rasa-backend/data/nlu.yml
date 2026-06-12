@@ -29,6 +29,21 @@ nlu:
     - καλησπέρα σας
     - γειά
 
+- intent: change_lang_to_en
+  examples: |
+    - can we speak in english?
+    - english please
+    - speak english
+    - let's talk in english
+    - do you know english?
+
+- intent: change_lang_to_el
+  examples: |
+    - μπορούμε να μιλήσουμε ελληνικά;
+    - ελληνικά παρακαλώ
+    - μίλα ελληνικά
+    - γύρνα στα ελληνικά
+
 - intent: ask_admission_requirements_el
   examples: |
     - Ποια είναι τα κριτήρια εισαγωγής;
