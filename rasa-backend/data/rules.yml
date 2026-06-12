@@ -2,79 +2,81 @@ version: "3.1"
 
 rules:
 
+# ==================== ΕΛΛΗΝΙΚΟΙ ΚΑΝΟΝΕΣ ====================
+
 - rule: Say goodbye anytime the user says goodbye (GR)
   steps:
   - intent: goodbye_el
   - action: utter_goodbye_el
 
-- rule: Say 'I am a bot' anytime the user challenges (GR)
-  steps:
-  - intent: bot_challenge_el
-  - action: utter_iamabot_el
-
-- rule: Διαχείριση Άγχους Προθεσμίας - Ελληνικά
-  steps:
-  - intent: stress_deadline_el
-  - action: utter_stress_deadline_el
-
 - rule: Εμφάνιση Στοιχείων Επικοινωνίας - Ελληνικά
   steps:
   - intent: ask_contact_el
   - action: utter_ask_contact_el
-
-- rule: Εμφάνιση Τοποθεσίας - Ελληνικά
-  steps:
-  - intent: ask_location_el
-  - action: utter_ask_location_el
+  - action: utter_anything_else_el
 
 - rule: Απάντηση σε Ευχαριστώ - Ελληνικά
   steps:
   - intent: thankyou_el
   - action: utter_thankyou_el
+  - action: utter_anything_else_el
 
 - rule: Διαχείριση Προσβολής - Ελληνικά
   steps:
   - intent: insult_el
   - action: utter_insult_el
+  - action: utter_anything_else_el
 
-# --- ΑΓΓΛΙΚΟΙ ΚΑΝΟΝΕΣ ---
+# --- ΔΙΑΧΕΙΡΙΣΗ STANDARD ΕΡΩΤΗΣΗΣ (GR) ---
+- rule: Ο χρήστης θέλει κι άλλη βοήθεια (GR - Ναι)
+  steps:
+  - intent: affirm_anything_else_el
+  - action: utter_what_else_el
+
+- rule: Ο χρήστης τελείωσε (GR - Όχι)
+  steps:
+  - intent: deny_anything_else_el
+  - action: utter_goodbye_el
+
+
+# ==================== ΑΓΓΛΙΚΟΙ ΚΑΝΟΝΕΣ ====================
 
 - rule: Say goodbye anytime the user says goodbye (EN)
   steps:
   - intent: goodbye_en
   - action: utter_goodbye_en
 
-- rule: Say 'I am a bot' anytime the user challenges (EN)
-  steps:
-  - intent: bot_challenge_en
-  - action: utter_iamabot_en
-
-- rule: Handle Deadline Stress - English
-  steps:
-  - intent: stress_deadline_en
-  - action: utter_stress_deadline_en
-
 - rule: Show Contact Details - English
   steps:
   - intent: ask_contact_en
   - action: utter_ask_contact_en
-
-- rule: Show Location - English
-  steps:
-  - intent: ask_location_en
-  - action: utter_ask_location_en
+  - action: utter_anything_else_en
 
 - rule: Respond to Thank You - English
   steps:
   - intent: thankyou_en
   - action: utter_thankyou_en
+  - action: utter_anything_else_en
 
 - rule: Handle Insult - English
   steps:
   - intent: insult_en
   - action: utter_insult_en
+  - action: utter_anything_else_en
 
-# --- ΚΟΙΝΩΝΙΚΗ ΝΟΗΜΟΣΥΝΗ: ΔΙΓΛΩΣΣΟ CUSTOM FALLBACK ---
+# --- ΔΙΑΧΕΙΡΙΣΗ STANDARD ΕΡΩΤΗΣΗΣ (EN) ---
+- rule: User wants more help (EN - Yes)
+  steps:
+  - intent: affirm_anything_else_en
+  - action: utter_what_else_en
+
+- rule: User is done (EN - No)
+  steps:
+  - intent: deny_anything_else_en
+  - action: utter_goodbye_en
+
+
+# ==================== FALLBACK ====================
 
 - rule: Ενεργοποίηση Custom Fallback
   steps:

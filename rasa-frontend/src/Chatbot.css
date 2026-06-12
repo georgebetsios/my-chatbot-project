@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. WRAPPER & LAUNCHER BUTTON (BUTTON ON PAGE)
+   ========================================================================== */
 .chatbot-wrapper {
   position: fixed;
   bottom: 20px;
@@ -10,26 +13,24 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 65px; /* Το μεγαλώνουμε ελάχιστα */
+  width: 65px;
   height: 65px;
   border-radius: 50%;
-  /* 🟢 Μοντέρνο gradient με τα χρώματα του ΠΜΣ για εφέ γυαλάδας */
   background: linear-gradient(135deg, #8cd353 0%, #6aa83b 100%);
   color: white;
   border: none;
   cursor: pointer;
-  /* 🪄 Πιο βαθιά και απαλή σκιά για τρισδιάστατο εφέ (3D look) */
-  box-shadow: 0 8px 24px rgba(106, 168, 59, 0.3), inset 0 -3px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(106, 168, 59, 0.3), inset 0 -3px 0 rgba(0, 0, 0, 0.15);
   z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Ομαλό bounce εφέ */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .chatbot-launcher:hover {
-  transform: scale(1.08) translateY(-3px); /* Μεγαλώνει και "πηδάει" ελαφρώς προς τα πάνω */
-  box-shadow: 0 12px 28px rgba(106, 168, 59, 0.4), inset 0 -3px 0 rgba(0,0,0,0.15);
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 28px rgba(106, 168, 59, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .launcher-icon {
@@ -39,16 +40,16 @@
 
 .launcher-tooltip {
   position: absolute;
-  right: 80px; /* Το σπρώχνει στα αριστερά του κυκλικού κουμπιού */
-  background-color: #3a4d5f; /* 🩶 Το σκούρο γκρι του ΠΜΣ για τέλεια αντίθεση */
+  right: 80px;
+  background-color: #3a4d5f;
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  animation: fadeInRight 0.4s ease forwards; /* Ομαλό εφάνιση με animation */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeInRight 0.4s ease forwards;
   pointer-events: none;
 }
 
@@ -63,29 +64,31 @@
   border-color: transparent transparent transparent #3a4d5f;
 }
 
+/* ==========================================================================
+   2. ICONS & ANIMATIONS
+   ========================================================================== */
+.svg-icon {
+  width: 28px;
+  height: 28px;
+  stroke: white;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.chatbot-launcher svg {
+  animation: scaleIn 0.25s ease forwards;
+}
+
 @keyframes fadeInRight {
   from {
     opacity: 0;
     transform: translateX(10px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-/* Ρυθμίσεις για τα νέα SVG εικονίδια */
-.svg-icon {
-  width: 28px;  /* Ιδανικό μέγεθος για να φαίνεται κομψό */
-  height: 28px;
-  stroke: white; /* Το χρώμα των γραμμών του εικονιδίου */
-  display: block;
-  transition: transform 0.2s;
-}
-
-/* Μικρό εφέ περιστροφής στο X όταν ανοίγει, για extra λεπτομέρεια */
-.chatbot-launcher svg {
-  animation: scaleIn 0.25s ease forwards;
 }
 
 @keyframes scaleIn {
@@ -93,45 +96,26 @@
     transform: scale(0.5);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
   }
 }
 
-/* Το κείμενο "Online" μαζί με την κουκκίδα */
-.chatbot-online-status {
-  font-size: 11px;
-  opacity: 0.9;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px; /* Απόσταση ανάμεσα στην κουκκίδα και τη λέξη Online */
-}
-
-/* 🟢 Δημιουργία της πράσινης κουκκίδας */
-.chatbot-online-status::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background-color: #2ecc71; /* Έντονο "ζωντανό" πράσινο */
-  border-radius: 50%;
-  display: inline-block;
-  /* ⚡️ Προσθέτουμε ένα εφέ που αναβοσβήνει απαλά */
-  animation: pulse-dot 2s infinite ease-in-out; 
-}
-
-/* 🔄 Το animation για το εφέ "παλμού" (Pulse) */
 @keyframes pulse-dot {
   0% {
     transform: scale(0.9);
     opacity: 0.6;
     box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
   }
+
   50% {
     transform: scale(1.1);
     opacity: 1;
     box-shadow: 0 0 0 4px rgba(46, 204, 113, 0);
   }
+
   100% {
     transform: scale(0.9);
     opacity: 0.6;
@@ -139,15 +123,18 @@
   }
 }
 
+/* ==========================================================================
+   3. CHAT WINDOW & HEADER
+   ========================================================================== */
 .chatbot-window {
   position: fixed;
-  bottom: 105px; /* Από 90px το κάνουμε 105px για να μην κρύβει το κουμπί */
-  right: 30px;   /* Από 20px το κάνουμε 30px */
-  width: 380px;  /* Το μεγαλώνουμε ελάχιστα (από 350px) για να μην στριμώχνεται το κείμενο */
-  height: 500px; /* Το ψηλώνουμε ελάχιστα (από 450px) */
+  bottom: 105px;
+  right: 30px;
+  width: 380px;
+  height: 500px;
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -155,23 +142,22 @@
 }
 
 .chatbot-header {
-  background-color: #3a4d5f; /* 🩶 Σκούρο γκρι από το λογότυπο */
+  background-color: #3a4d5f;
   color: white;
   padding: 12px 15px;
   display: flex;
   align-items: center;
   gap: 30px;
-  border-bottom: 2px solid #7bc143; /* 🟢 Μια λεπτή πράσινη γραμμή για στυλ στο κάτω μέρος του header */
+  border-bottom: 2px solid #7bc143;
 }
 
-/* ⭐️ Το στυλ για το νέο σου λογότυπο */
 .chatbot-header-logo {
-  width: 100px;  /* Το μικραίνουμε για να κάθεται όμορφα */
+  width: 100px;
   height: auto;
-  background-color: white; /* Επειδή το logo έχει λευκό φόντο, δένει τέλεια */
+  background-color: white;
   padding: 4px;
-  border-radius: 6px; /* Στρογγυλεύουμε ελαφρώς τις γωνίες του */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .chatbot-header-title {
@@ -186,12 +172,27 @@
   letter-spacing: 0.5px;
 }
 
-.chatbot-header-title span {
-  font-size: 12px;
-  opacity: 0.85;
+.chatbot-online-status {
+  font-size: 11px;
+  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
+.chatbot-online-status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
 
+/* ==========================================================================
+   4. MESSAGES AREA & CONTEXT CONTAINERS
+   ========================================================================== */
 .chatbot-messages {
   flex: 1;
   padding: 15px;
@@ -202,77 +203,157 @@
   background-color: #f8f9fa;
 }
 
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 80%;
+  /* 👈 Εδώ κλειδώνουμε το 85% για όλο το πακέτο (bubble + κουμπιά) */
+}
+
+.message-container.bot {
+  align-self: flex-start;
+  align-items: flex-start;
+  padding-left: 8px;
+}
+
+.message-container.user {
+  align-self: flex-end;
+  align-items: flex-end;
+  padding-right: 8px;
+}
+
+/* ==========================================================================
+   5. MESSAGE BUBBLES & MARKDOWN LINKS
+   ========================================================================== */
 .message-bubble {
   padding: 12px 16px;
   border-radius: 16px;
-  max-width: 75%;
   font-size: 14px;
   line-height: 1.5;
-  white-space: pre-line;
   text-align: left;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  white-space: pre-wrap;     
-  word-break: break-word;     
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  white-space: pre-wrap;
+  word-break: break-word;
   overflow-wrap: break-word;
+  width: fit-content;
+  /* 👈 Μαζεύει αυτόματα γύρω από το κείμενο */
 }
 
 .message-bubble.bot {
   background-color: #e9ecef;
   color: #333;
-  align-self: flex-start;
   border-top-left-radius: 2px;
 }
 
-/* Στυλ για τα links μέσα στα μηνύματα του bot */
 .message-bubble.bot a {
-  color: #0066cc;          /* Όμορφο μπλε χρώμα */
-  text-decoration: underline; /* Υπογράμμιση για να ξεχωρίζει */
+  color: #0066cc;
+  text-decoration: underline;
   font-weight: bold;
   transition: color 0.2s ease;
 }
 
 .message-bubble.bot a:hover {
-  color: #004499;          /* Πιο σκούρο μπλε όταν περνάει το ποντίκι */
+  color: #004499;
 }
 
 .message-bubble.user {
-  background-color: #7bc143; /* 🟢 Πράσινο για τα μηνύματα του χρήστη */
+  background-color: #7bc143;
   color: white;
-  align-self: flex-end;
   border-top-right-radius: 2px;
 }
 
-/* 1. Το container που κρατάει το input και το κουμπί */
+/* ==================== PROACTIVE BUTTONS (THE FIXED VERSION) ==================== */
+.chat-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  align-self: flex-start;
+  align-items: flex-start;
+  padding-left: 2px;
+  animation: scaleIn 0.3s ease forwards;
+}
+
+.chat-action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #6aa83b;
+
+  /* 🌟 Σταθερό border που ΔΕΝ θα μετακινηθεί ή θα κρυφτεί */
+  border: 2px solid #6aa83b;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* 🌟 ΚΛΕΙΔΩΝΕΙ το background αυστηρά ΜΕΣΑ από το border */
+  background-clip: padding-box;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.chat-action-button:hover {
+  /* 🟢 Το gradient μπαίνει κανονικά */
+  background: linear-gradient(135deg, #8cd353 0%, #6aa83b 100%);
+  color: #ffffff;
+
+  /* 🌟 ΤΟ ΜΥΣΤΙΚΟ: Στο hover, αλλάζουμε το border color στο πιο σκούρο πράσινο 
+     της βάσης του gradient (#6aa83b). Έτσι, ακόμα κι αν ο browser πάει να κάνει 
+     over-lap, το border θα είναι εκεί, ορατό και αιχμηρό! */
+  border-color: #5b9432;
+
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 168, 59, 0.3);
+}
+
+/* Το SVG εικονίδιο μέσα στο κουμπί */
+.btn-svg-icon {
+  flex-shrink: 0;
+  stroke: #6aa83b;
+  transition: stroke 0.2s ease;
+}
+
+/* Όταν γίνεται hover στο κουμπί, το SVG γίνεται λευκό */
+.chat-action-button:hover .btn-svg-icon {
+  stroke: #ffffff;
+}
+
+/* ==========================================================================
+   7. INPUT FORM & SEND BUTTON
+   ========================================================================== */
 .chatbot-input-form {
   display: flex;
-  align-items: center; /* Ευθυγραμμίζει κατακόρυφα το input με το Send */
+  align-items: center;
   border-top: 1px solid #dee2e6;
-  padding: 12px 15px; /* Δώσαμε λίγο παραπάνω εσωτερικό χώρο */
+  padding: 12px 15px;
   background-color: white;
 }
 
-/* 2. Το ίδιο το πλαίσιο κειμένου (Input) */
 .chatbot-input-form input {
   flex: 1;
   border: 1px solid #ced4da;
-  border-radius: 24px; /* Αυξήθηκε για να ταιριάζει με το νέο ύψος */
-  padding: 12px 20px;  /* ⭐️ Αυξήσαμε το padding για να γίνει πιο μεγάλο/ψηλό */
-  font-size: 15px;     /* ⭐️ Μεγαλώσαμε τη γραμματοσειρά για να διαβάζεται πιο εύκολα */
+  border-radius: 24px;
+  padding: 12px 20px;
+  font-size: 15px;
   outline: none;
   transition: border-color 0.2s;
 }
 
-/* 5. Το περίγραμμα του input όταν γράφεις */
 .chatbot-input-form input:focus {
-  border-color: #3a4d5f; /* 🩶 Σκούρο γκρι περίγραμμα στο focus */
+  border-color: #3a4d5f;
 }
 
-/* 4. Το κουμπί Send */
 .chatbot-input-form button {
-  background-color: #3a4d5f; /* 灰 Σκούρο γκρι/μπλε του ΠΜΣ ως βάση */
+  background-color: #3a4d5f;
   color: white;
   border: none;
-  width: 40px;  /* Το κάνουμε τέλειο κύκλο */
+  width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-left: 10px;
@@ -282,16 +363,15 @@
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(58, 77, 95, 0.2);
-  /* Ομαλή μετάβαση για όλα τα εφέ */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .chatbot-input-form button:hover {
-  background-color: #7bc143; /* 🟢 Μεταμορφώνεται στο πράσινο του ΠΜΣ! */
+  background-color: #7bc143;
   box-shadow: 0 4px 12px rgba(123, 193, 67, 0.4);
-  transform: scale(1.08) rotate(-15deg); /* ✨ Μικρό εφέ μεγέθυνσης και ελαφριάς κλίσης της σαΐτας για κίνηση */
+  transform: scale(1.08) rotate(-15deg);
 }
 
 .chatbot-input-form button:active {
-  transform: scale(0.95); /* "Βυθίζεται" ελαφρώς για να νιώθεις το πάτημα */
+  transform: scale(0.95);
 }

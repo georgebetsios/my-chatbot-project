@@ -2,115 +2,77 @@ version: "3.1"
 
 stories:
 
+# ==========================================================================
+# 1. ΑΠΛΑ ΜΟΝΟΠΑΤΙΑ ΜΕ STANDARD FOLLOW-UP (ΕΛΛΗΝΙΚΑ)
+# ==========================================================================
+
 - story: Ελληνικό path - Χαιρετισμός
   steps:
   - intent: greet_el
   - action: utter_greet_el
+
+- story: Ελληνικό path - Κριτήρια Εισαγωγής
+  steps:
+  - intent: ask_admission_requirements_el
+  - action: utter_ask_admission_requirements_el
+  - action: utter_anything_else_el
+
+- story: Ελληνικό path - Δίδακτρα
+  steps:
+  - intent: ask_tuition_fees_el
+  - action: utter_ask_tuition_fees_el
+  - action: utter_anything_else_el
+
+- story: Ελληνικό path - Τρόπος Φοίτησης
+  steps:
+  - intent: ask_attendance_mode_el
+  - action: utter_ask_attendance_mode_el
+  - action: utter_anything_else_el
+
+- story: Ταυτότητα bot ελληνικά
+  steps:
+  - intent: bot_challenge_el
+  - action: utter_iamabot_el
+  - action: utter_anything_else_el
+
+
+# ==========================================================================
+# 2. ΑΠΛΑ ΜΟΝΟΠΑΤΙΑ ΜΕ STANDARD FOLLOW-UP (ENGLISH)
+# ==========================================================================
 
 - story: English path - Greeting
   steps:
   - intent: greet_en
   - action: utter_greet_en
 
-- story: Ελληνικό path - Κριτήρια Εισαγωγής
-  steps:
-  - intent: ask_admission_requirements_el
-  - action: utter_ask_admission_requirements_el
-
 - story: English path - Admission Requirements
   steps:
   - intent: ask_admission_requirements_en
   - action: utter_ask_admission_requirements_en
-
-- story: Ελληνικό path - Δίδακτρα
-  steps:
-  - intent: ask_tuition_fees_el
-  - action: utter_ask_tuition_fees_el
+  - action: utter_anything_else_en
 
 - story: English path - Tuition Fees
   steps:
   - intent: ask_tuition_fees_en
   - action: utter_ask_tuition_fees_en
-
-- story: Ελληνικό path - Διάρκεια Σπουδών
-  steps:
-  - intent: ask_duration_el
-  - action: utter_ask_duration_el
-
-- story: English path - Duration of Studies
-  steps:
-  - intent: ask_duration_en
-  - action: utter_ask_duration_en
-
-- story: Ελληνικό path - Πώς λειτουργεί το πρόγραμμα (Δομή)
-  steps:
-  - intent: ask_curriculum_structure_el
-  - action: utter_ask_curriculum_structure_el
-
-- story: English path - Curriculum Structure
-  steps:
-  - intent: ask_curriculum_structure_en
-  - action: utter_ask_curriculum_structure_en
-
-- story: Ελληνικό path - Λίστα Μαθημάτων
-  steps:
-  - intent: ask_courses_list_el
-  - action: utter_ask_courses_list_el
-
-- story: English path - Courses List
-  steps:
-  - intent: ask_courses_list_en
-  - action: utter_ask_courses_list_en
-
-- story: Ελληνικό path - Προθεσμία Αιτήσεων
-  steps:
-  - intent: ask_application_deadline_el
-  - action: utter_ask_application_deadline_el
-
-- story: English path - Application Deadline
-  steps:
-  - intent: ask_application_deadline_en
-  - action: utter_ask_application_deadline_en
-
-- story: Ελληνικό path - Τρόπος Φοίτησης
-  steps:
-  - intent: ask_attendance_mode_el
-  - action: utter_ask_attendance_mode_el
+  - action: utter_anything_else_en
 
 - story: English path - Attendance Mode
   steps:
   - intent: ask_attendance_mode_en
   - action: utter_ask_attendance_mode_en
-
-- story: Ελληνικό path - Μερική ή Πλήρης Φοίτηση
-  steps:
-  - intent: ask_study_intensity_el
-  - action: utter_ask_study_intensity_el
-
-- story: English path - Full or Part Time Study
-  steps:
-  - intent: ask_study_intensity_en
-  - action: utter_ask_study_intensity_en
-
-- story: Αντίο ελληνικά
-  steps:
-  - intent: goodbye_el
-  - action: utter_goodbye_el
-
-- story: Goodbye english
-  steps:
-  - intent: goodbye_en
-  - action: utter_goodbye_en
-
-- story: Ταυτότητα bot ελληνικά
-  steps:
-  - intent: bot_challenge_el
-  - action: utter_iamabot_el
+  - action: utter_anything_else_en
 
 - story: Bot challenge english
   steps:
   - intent: bot_challenge_en
   - action: utter_iamabot_en
+  - action: utter_anything_else_en
+
+
+# ==========================================================================
+# 3. DEFAULT ΑΥΤΟΝΟΜΕΣ ΕΠΙΒΕΒΑΙΩΣΕΙΣ / ΑΡΝΗΣΕΙΣ (ΕΚΤΟΣ ΡΟΩΝ)
+# ==========================================================================
 
 - story: Επιβεβαίωση χρήστη ελληνικά (Ναι)
   steps:
@@ -127,23 +89,212 @@ stories:
   - intent: deny_el
   - action: utter_deny_el
 
-- story: Κλείσιμο συζήτησης μετά από ευχαριστώ - Ελληνικά
-  steps:
-  - intent: thankyou_el
-  - action: utter_thankyou_el  
-  - intent: deny_el             
-  - action: utter_goodbye_el
-
 - story: User denial english (No)
   steps:
   - intent: deny_en
   - action: utter_deny_en
 
-- story: Closing conversation after thanks - English
+- story: Αντίο ελληνικά
   steps:
-  - intent: thankyou_en
-  - action: utter_thankyou_en       
-  - intent: deny_en                  
+  - intent: goodbye_el
+  - action: utter_goodbye_el
+
+- story: Goodbye english
+  steps:
+  - intent: goodbye_en
   - action: utter_goodbye_en
 
 
+# ==========================================================================
+# ΡΟΗ 1: ΔΟΜΗ ➔ ΛΙΣΤΑ ΜΑΘΗΜΑΤΩΝ (ΜΕ FOLLOW-UP & ΑΠΟΧΑΙΡΕΤΙΣΜΟ)
+# ==========================================================================
+
+- story: Ροή από δομή προγράμματος σπουδών σε λίστα μαθημάτων (Ναι)
+  steps:
+  - intent: ask_curriculum_structure_el
+  - action: utter_ask_curriculum_structure_el
+  - action: utter_suggest_courses_list_el
+  - intent: affirm_el
+  - action: utter_ask_courses_list_el
+  - action: utter_anything_else_el
+
+- story: Ροή από δομή προγράμματος σπουδών σε λίστα μαθημάτων (Όχι)
+  steps:
+  - intent: ask_curriculum_structure_el
+  - action: utter_ask_curriculum_structure_el
+  - action: utter_suggest_courses_list_el
+  - intent: deny_el
+  - action: utter_goodbye_el
+
+- story: Curriculum structure to courses list flow (English - Yes)
+  steps:
+  - intent: ask_curriculum_structure_en
+  - action: utter_ask_curriculum_structure_en
+  - action: utter_suggest_courses_list_en
+  - intent: affirm_en
+  - action: utter_ask_courses_list_en
+  - action: utter_anything_else_en
+
+- story: Curriculum structure to courses list flow (English - No)
+  steps:
+  - intent: ask_curriculum_structure_en
+  - action: utter_ask_curriculum_structure_en
+  - action: utter_suggest_courses_list_en
+  - intent: deny_en
+  - action: utter_goodbye_en
+
+
+# ==========================================================================
+# ΡΟΗ 2: ΠΡΟΘΕΣΜΙΑ ΑΙΤΗΣΕΩΝ ➔ ΔΙΔΑΚΤΡΑ (ΜΕ FOLLOW-UP & ΑΠΟΧΑΙΡΕΤΙΣΜΟ)
+# ==========================================================================
+
+- story: Ροή από προθεσμία αιτήσεων σε δίδακτρα (Ναι)
+  steps:
+  - intent: ask_application_deadline_el
+  - action: utter_ask_application_deadline_el
+  - action: utter_suggest_tuition_fees_el
+  - intent: affirm_el
+  - action: utter_ask_tuition_fees_el
+  - action: utter_anything_else_el
+
+- story: Ροή από προθεσμία αιτήσεων σε δίδακτρα (Όχι)
+  steps:
+  - intent: ask_application_deadline_el
+  - action: utter_ask_application_deadline_el
+  - action: utter_suggest_tuition_fees_el
+  - intent: deny_el
+  - action: utter_goodbye_el
+
+- story: Application deadline to tuition fees flow (English - Yes)
+  steps:
+  - intent: ask_application_deadline_en
+  - action: utter_ask_application_deadline_en
+  - action: utter_suggest_tuition_fees_en
+  - intent: affirm_en
+  - action: utter_ask_tuition_fees_en
+  - action: utter_anything_else_en
+
+- story: Application deadline to tuition fees flow (English - No)
+  steps:
+  - intent: ask_application_deadline_en
+  - action: utter_ask_application_deadline_en
+  - action: utter_suggest_tuition_fees_en
+  - intent: deny_en
+  - action: utter_goodbye_en
+
+
+# ==========================================================================
+# ΡΟΗ 3: ΤΟΠΟΘΕΣΙΑ ➔ ΕΠΙΚΟΙΝΩΝΙΑ (ΜΕ FOLLOW-UP & ΑΠΟΧΑΙΡΕΤΙΣΜΟ)
+# ==========================================================================
+
+- story: Ροή από τοποθεσία σε στοιχεία επικοινωνίας (Ναι)
+  steps:
+  - intent: ask_location_el
+  - action: utter_ask_location_el
+  - action: utter_suggest_contact_el
+  - intent: affirm_el
+  - action: utter_ask_contact_el
+  - action: utter_anything_else_el
+
+- story: Ροή από τοποθεσία σε στοιχεία επικοινωνίας (Όχι)
+  steps:
+  - intent: ask_location_el
+  - action: utter_ask_location_el
+  - action: utter_suggest_contact_el
+  - intent: deny_el
+  - action: utter_goodbye_el
+
+- story: Location to contact details flow (English - Yes)
+  steps:
+  - intent: ask_location_en
+  - action: utter_ask_location_en
+  - action: utter_suggest_contact_en
+  - intent: affirm_en
+  - action: utter_ask_contact_en
+  - action: utter_anything_else_en
+
+- story: Location to contact details flow (English - No)
+  steps:
+  - intent: ask_location_en
+  - action: utter_ask_location_en
+  - action: utter_suggest_contact_en
+  - intent: deny_en
+  - action: utter_goodbye_en
+
+
+# ==========================================================================
+# ΡΟΗ 4: ΑΓΧΟΣ ΠΡΟΘΕΣΜΙΑΣ ➔ ΕΛΕΓΧΟΣ (ΜΕ FOLLOW-UP & ΑΠΟΧΑΙΡΕΤΙΣΜΟ)
+# ==========================================================================
+
+- story: Ροή από άγχος προθεσμίας σε έλεγχο ημερομηνιών (Ναι)
+  steps:
+  - intent: stress_deadline_el
+  - action: utter_stress_deadline_el
+  - action: utter_suggest_check_deadline_el
+  - intent: affirm_el
+  - action: utter_ask_application_deadline_el
+  - action: utter_anything_else_el
+
+- story: Ροή από άγχος προθεσμίας σε έλεγχο ημερομηνιών (Όχι)
+  steps:
+  - intent: stress_deadline_el
+  - action: utter_stress_deadline_el
+  - action: utter_suggest_check_deadline_el
+  - intent: deny_el
+  - action: utter_goodbye_el
+
+- story: Stress deadline to check application deadline flow (English - Yes)
+  steps:
+  - intent: stress_deadline_en
+  - action: utter_stress_deadline_en
+  - action: utter_suggest_check_deadline_en
+  - intent: affirm_en
+  - action: utter_ask_application_deadline_en
+  - action: utter_anything_else_en
+
+- story: Stress deadline to check application deadline flow (English - No)
+  steps:
+  - intent: stress_deadline_en
+  - action: utter_stress_deadline_en
+  - action: utter_suggest_check_deadline_en
+  - intent: deny_en
+  - action: utter_goodbye_en
+
+
+# ==========================================================================
+# ΡΟΗ 5: ΔΙΑΡΚΕΙΑ ➔ ΜΕΡΙΚΗ ΦΟΙΤΗΣΗ (ΜΕ FOLLOW-UP & ΑΠΟΧΑΙΡΕΤΙΣΜΟ)
+# ==========================================================================
+
+- story: Ροή από διάρκεια σπουδών σε μερική φοίτηση (Ναι)
+  steps:
+  - intent: ask_duration_el
+  - action: utter_ask_duration_el
+  - action: utter_suggest_study_intensity_el
+  - intent: affirm_el
+  - action: utter_ask_study_intensity_el
+  - action: utter_anything_else_el
+
+- story: Ροή από διάρκεια σπουδών σε μερική φοίτηση (Όχι)
+  steps:
+  - intent: ask_duration_el
+  - action: utter_ask_duration_el
+  - action: utter_suggest_study_intensity_el
+  - intent: deny_el
+  - action: utter_goodbye_el
+
+- story: Duration of studies to part time option flow (English - Yes)
+  steps:
+  - intent: ask_duration_en
+  - action: utter_ask_duration_en
+  - action: utter_suggest_study_intensity_en
+  - intent: affirm_en
+  - action: utter_ask_study_intensity_en
+  - action: utter_anything_else_en
+
+- story: Duration of studies to part time option flow (English - No)
+  steps:
+  - intent: ask_duration_en
+  - action: utter_ask_duration_en
+  - action: utter_suggest_study_intensity_en
+  - intent: deny_en
+  - action: utter_goodbye_en
