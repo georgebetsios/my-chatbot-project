@@ -1,0 +1,149 @@
+version: "3.1"
+
+stories:
+
+- story: Ελληνικό path - Χαιρετισμός
+  steps:
+  - intent: greet_el
+  - action: utter_greet_el
+
+- story: English path - Greeting
+  steps:
+  - intent: greet_en
+  - action: utter_greet_en
+
+- story: Ελληνικό path - Κριτήρια Εισαγωγής
+  steps:
+  - intent: ask_admission_requirements_el
+  - action: utter_ask_admission_requirements_el
+
+- story: English path - Admission Requirements
+  steps:
+  - intent: ask_admission_requirements_en
+  - action: utter_ask_admission_requirements_en
+
+- story: Ελληνικό path - Δίδακτρα
+  steps:
+  - intent: ask_tuition_fees_el
+  - action: utter_ask_tuition_fees_el
+
+- story: English path - Tuition Fees
+  steps:
+  - intent: ask_tuition_fees_en
+  - action: utter_ask_tuition_fees_en
+
+- story: Ελληνικό path - Διάρκεια Σπουδών
+  steps:
+  - intent: ask_duration_el
+  - action: utter_ask_duration_el
+
+- story: English path - Duration of Studies
+  steps:
+  - intent: ask_duration_en
+  - action: utter_ask_duration_en
+
+- story: Ελληνικό path - Πώς λειτουργεί το πρόγραμμα (Δομή)
+  steps:
+  - intent: ask_curriculum_structure_el
+  - action: utter_ask_curriculum_structure_el
+
+- story: English path - Curriculum Structure
+  steps:
+  - intent: ask_curriculum_structure_en
+  - action: utter_ask_curriculum_structure_en
+
+- story: Ελληνικό path - Λίστα Μαθημάτων
+  steps:
+  - intent: ask_courses_list_el
+  - action: utter_ask_courses_list_el
+
+- story: English path - Courses List
+  steps:
+  - intent: ask_courses_list_en
+  - action: utter_ask_courses_list_en
+
+- story: Ελληνικό path - Προθεσμία Αιτήσεων
+  steps:
+  - intent: ask_application_deadline_el
+  - action: utter_ask_application_deadline_el
+
+- story: English path - Application Deadline
+  steps:
+  - intent: ask_application_deadline_en
+  - action: utter_ask_application_deadline_en
+
+- story: Ελληνικό path - Τρόπος Φοίτησης
+  steps:
+  - intent: ask_attendance_mode_el
+  - action: utter_ask_attendance_mode_el
+
+- story: English path - Attendance Mode
+  steps:
+  - intent: ask_attendance_mode_en
+  - action: utter_ask_attendance_mode_en
+
+- story: Ελληνικό path - Μερική ή Πλήρης Φοίτηση
+  steps:
+  - intent: ask_study_intensity_el
+  - action: utter_ask_study_intensity_el
+
+- story: English path - Full or Part Time Study
+  steps:
+  - intent: ask_study_intensity_en
+  - action: utter_ask_study_intensity_en
+
+- story: Αντίο ελληνικά
+  steps:
+  - intent: goodbye_el
+  - action: utter_goodbye_el
+
+- story: Goodbye english
+  steps:
+  - intent: goodbye_en
+  - action: utter_goodbye_en
+
+- story: Ταυτότητα bot ελληνικά
+  steps:
+  - intent: bot_challenge_el
+  - action: utter_iamabot_el
+
+- story: Bot challenge english
+  steps:
+  - intent: bot_challenge_en
+  - action: utter_iamabot_en
+
+- story: Επιβεβαίωση χρήστη ελληνικά (Ναι)
+  steps:
+  - intent: affirm_el
+  - action: utter_affirm_el
+
+- story: User affirmation english (Yes)
+  steps:
+  - intent: affirm_en
+  - action: utter_affirm_en
+
+- story: Άρνηση χρήστη ελληνικά (Όχι)
+  steps:
+  - intent: deny_el
+  - action: utter_deny_el
+
+- story: Κλείσιμο συζήτησης μετά από ευχαριστώ - Ελληνικά
+  steps:
+  - intent: thankyou_el
+  - action: utter_thankyou_el  
+  - intent: deny_el             
+  - action: utter_goodbye_el
+
+- story: User denial english (No)
+  steps:
+  - intent: deny_en
+  - action: utter_deny_en
+
+- story: Closing conversation after thanks - English
+  steps:
+  - intent: thankyou_en
+  - action: utter_thankyou_en       
+  - intent: deny_en                  
+  - action: utter_goodbye_en
+
+

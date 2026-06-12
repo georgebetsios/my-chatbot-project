@@ -1,0 +1,327 @@
+version: "3.1"
+
+nlu:
+- intent: greet_en
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: greet_el
+  examples: |
+    - γεια
+    - γεια σας
+    - καλημέρα
+    - καλησπέρα
+    - χαίρετε
+    - γεια χαρά
+    - καλημέρα σας
+    - καλησπέρα σας
+    - γειά
+
+- intent: ask_admission_requirements_el
+  examples: |
+    - Ποια είναι τα κριτήρια εισαγωγής;
+    - Τι χρειάζεται για να μπω στο μεταπτυχιακό;
+    - Τι πτυχίο ζητάει;
+    - Ποια δικαιολογητικά πρέπει να καταθέσω;
+    - Χρειάζεται πτυχίο πληροφορικής ή παρεμφερές;
+    - Ποια είναι τα απαραίτητα προσόντα για την εισαγωγή;
+    - Πρέπει να ξέρω καλά αγγλικά;
+    - Τι χαρτιά χρειάζονται για την εγγραφή;
+
+- intent: ask_admission_requirements_en
+  examples: |
+    - What are the admission requirements?
+    - What do I need to get into the master program?
+    - What degree is required?
+    - Which documents do I need to submit?
+    - Do I need a computer science degree?
+    - What are the prerequisites for entry?
+    - Do I need to know English?
+    - What papers are required for registration?
+
+- intent: ask_tuition_fees_el
+  examples: |
+    - Πόσο κοστίζει το μεταπτυχιακό;
+    - Ποιο είναι το κόστος των διδάκτρων;
+    - Υπάρχουν δίδακτρα για το ΠΜΣ;
+    - Μπορώ να πληρώσω τα δίδακτρα σε δόσεις;
+    - Πόσα είναι τα δίδακτρα ανά εξάμηνο;
+    - Υπάρχει δυνατότητα δωρεάν φοίτησης ή απαλλαγής;
+    - Ποια είναι η οικονομική επιβάρυνση;
+    - Πόσα λεφτά είναι η κάθε δόση;
+
+- intent: ask_tuition_fees_en
+  examples: |
+    - How much does the master cost?
+    - What is the cost of tuition fees?
+    - Are there tuition fees for this MSc?
+    - Can I pay the tuition fees in installments?
+    - How much are the tuition fees per semester?
+    - Is there a possibility of free tuition or exemption?
+    - What is the total financial cost?
+    - Can I pay in parts?
+
+- intent: ask_duration_el
+  examples: |
+    - Πόσα εξάμηνα διαρκεί η φοίτηση;
+    - Ποια είναι η διάρκεια σπουδών;
+    - Πόσος χρόνος χρειάζεται για να αποφοιτήσω;
+    - Είναι δύο χρόνια ή ενάμισι;
+    - Πόσο κρατάει το μεταπτυχιακό;
+    - Πόσο καιρό θα μου πάρει να το τελειώσω;
+    - Ποια είναι η χρονική διάρκεια του ΠΜΣ;
+
+- intent: ask_duration_en
+  examples: |
+    - How many semesters does the program last?
+    - What is the duration of studies?
+    - How long does it take to graduate?
+    - Is it two years or one and a half?
+    - How long is the master program?
+    - What is the time duration of the MSc?
+    - How much time do I need to finish?
+
+- intent: ask_curriculum_structure_el
+  examples: |
+    - Πώς λειτουργεί το πρόγραμμα σπουδών;
+    - Πόσα μαθήματα πρέπει να επιλέξω;
+    - Είναι όλα τα μαθήματα υποχρεωτικά;
+    - Πώς γίνεται η επιλογή των μαθημάτων;
+    - Πόσα μαθήματα διαλέγουμε σε κάθε εξάμηνο;
+
+- intent: ask_curriculum_structure_en
+  examples: |
+    - How does the curriculum work?
+    - How many courses do I have to choose?
+    - Are all courses compulsory?
+    - How do we select courses?
+    - How many courses do we choose per semester?
+
+- intent: ask_courses_list_el
+  examples: |
+    - Ποια είναι ακριβώς τα μαθήματα;
+    - Θέλω τη λίστα με τα μαθήματα.
+    - Ποια μαθήματα διδάσκονται;
+    - Τι μαθήματα έχει το [πρώτο](semester) εξάμηνο;
+    - Ποια είναι τα μαθήματα του [2ου](semester) εξαμήνου;
+    - Υπάρχει κατάλογος μαθημάτων;
+    - Ποια ειναι τα μαθηματα;
+    - Θέλω να μου πεις για τα μαθηματα.
+    - οκ και ποια ειναι τα μαθηματα;
+
+- intent: ask_courses_list_en
+  examples: |
+    - What are the exact courses?
+    - I want the list of courses.
+    - Which courses are taught?
+    - What courses are in the [first](semester) semester?
+    - What are the courses for the [2nd](semester) semester?
+    - Is there a course list?
+    - What are the courses?
+    - Tell me about the courses.
+    - ok and what are the courses?
+
+- intent: ask_application_deadline_el
+  examples: |
+    - Μέχρι πότε μπορώ να κάνω αίτηση;
+    - Πότε λήγει η προθεσμία υποβολής αιτήσεων;
+    - Πότε ξεκινούν οι εγγραφές για το νέο έτος;
+    - Πότε είναι η περίοδος των αιτήσεων;
+    - Έχει βγει η προκήρυξη για φέτος;
+    - Μέχρι πότε δέχεται αιτήσεις η γραμματεία;
+    - Πότε υποβάλλουμε τα δικαιολογητικά;
+
+- intent: ask_application_deadline_en
+  examples: |
+    - Until when can I apply?
+    - When is the application deadline?
+    - When do registrations start for the new year?
+    - When is the application period?
+    - Has the call for applications been released?
+    - Until when does the secretariat accept applications?
+
+- intent: ask_attendance_mode_el
+  examples: |
+    - Το μεταπτυχιακό είναι εξ αποστάσεως ή δια ζώσης;
+    - Γίνονται online μαθήματα;
+    - Πρέπει να πηγαίνω στη σχολή για τα μαθήματα;
+    - Τα μαθήματα γίνονται από κοντά;
+    - Υπάρχει δυνατότητα για τηλεκπαίδευση;
+    - Είναι e-learning το πρόγραμμα;
+    - Πώς γίνονται οι παραδόσεις των μαθημάτων;
+
+- intent: ask_attendance_mode_en
+  examples: |
+    - Is the master online or face-to-face?
+    - Are there remote classes?
+    - Do I have to attend classes in person?
+    - Are the courses held on campus?
+    - Is there a distance learning option?
+    - Is this an e-learning program?
+    - How are the lectures delivered?
+
+- intent: ask_study_intensity_el
+  examples: |
+    - Υπάρχει δυνατότητα για μερική φοίτηση;
+    - Μπορώ να το κάνω part-time επειδή εργάζομαι;
+    - Έχει μόνο πλήρη φοίτηση ή και μερική;
+    - Είμαι εργαζόμενος, μπορώ να σπουδάζω με λιγότερα μαθήματα;
+    - Πώς λειτουργεί η μερική φοίτηση στο μεταπτυχιακό;
+    - Μπορώ να παρατείνω τη διάρκεια σπουδών αν δουλεύω;
+
+- intent: ask_study_intensity_en
+  examples: |
+    - Is there a part-time study option?
+    - Can I do it part-time because I work?
+    - Does it offer full-time or part-time attendance?
+    - I am employed, can I take fewer courses per semester?
+    - How does part-time study work in this MSc?
+    - Can I extend the duration of studies if I work?
+
+- intent: goodbye_el
+  examples: |
+    - αντίο
+    - καλή συνέχεια
+    - φεύγω
+    - χαιρετώ
+
+- intent: goodbye_en
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - bye bye
+
+- intent: bot_challenge_el
+  examples: |
+    - είσαι ρομπότ;
+    - είσαι άνθρωπος;
+    - με ποιον μιλάω;
+    - είσαι bot;
+
+- intent: bot_challenge_en
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a robot?
+
+- intent: affirm_el
+  examples: |
+    - ναι
+    - φυσικά
+    - σωστά
+    - μάλιστα
+
+- intent: affirm_en
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - correct
+
+- intent: deny_el
+  examples: |
+    - όχι
+    - ποτέ
+    - δεν νομίζω
+    - λάθος
+
+- intent: deny_en
+  examples: |
+    - no
+    - never
+    - I don't think so
+
+- intent: stress_deadline_el
+  examples: |
+    - Φοβάμαι ότι έχασα την προθεσμία, τι να κάνω;
+    - Άγχος με τις προθεσμίες, πρόλαβα;
+    - Έχω αγχωθεί, έχασα την ημερομηνία για τις αιτήσεις;
+    - Ανησυχώ μήπως έκλεισαν οι αιτήσεις
+
+- intent: stress_deadline_en
+  examples: |
+    - I'm afraid I missed the deadline, what should I do?
+    - I'm stressed about the application deadline
+    - Did I miss the date for applications?
+    - I am worried that the deadline has passed
+
+- intent: ask_contact_el
+  examples: |
+    - Πώς μπορώ να επικοινωνήσω με τη γραμματεία;
+    - Ποιο είναι το τηλέφωνο της γραμματείας;
+    - Θέλω το email του διευθυντή
+    - Στοιχεία επικοινωνίας
+    - Πού μπορώ να στείλω email για πληροφορίες;
+
+- intent: ask_contact_en
+  examples: |
+    - How can I contact the secretariat?
+    - What is the phone number for the registry?
+    - I want the director's email
+    - Contact details
+    - Where can I send an email for info?
+
+- intent: ask_location_el
+  examples: |
+    - Πού βρίσκεται η γραμματεία;
+    - Πού γίνονται τα μαθήματα;
+    - Ποια είναι η διεύθυνση του μεταπτυχιακού;
+    - Σε ποιο κτίριο είστε;
+    - Πού πρέπει να έρθω για το μάθημα;
+    - θελω να μου πεις για την τοποθεσια
+    - ποια ειναι η τοποθεσια σας
+    - που ειστε
+
+- intent: ask_location_en
+  examples: |
+    - Where is the secretariat located?
+    - Where do the classes take place?
+    - What is the address of the master's program?
+    - In which building are you located?
+    - Where should I come for the lectures?
+    - I want you to tell me about the location
+    - What is your location?
+    - Where are you?
+
+- intent: thankyou_el
+  examples: |
+    - Ευχαριστώ πολύ
+    - Ευχαριστώ για τις πληροφορίες
+    - Ευχαριστώ bot
+    - Τέλεια, ευχαριστώ
+
+- intent: thankyou_en
+  examples: |
+    - Thank you so much
+    - Thanks for the help
+    - Thank you bot
+    - Perfect, thanks
+
+- intent: insult_el
+  examples: |
+    - Είσαι άχρηστο
+    - Δεν καταλαβαίνεις τίποτα
+    - Χαζό ρομπότ
+    - Είσαι κακό bot
+    - Βαρέθηκα μαζί σου
+
+- intent: insult_en
+  examples: |
+    - You are useless
+    - You are a stupid robot
+    - Bad bot
+    - You don't understand anything
+    - You are annoying

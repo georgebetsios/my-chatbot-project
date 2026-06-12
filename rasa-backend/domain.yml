@@ -1,0 +1,384 @@
+version: "3.1"
+
+intents:
+  - greet_en
+  - greet_el
+  - ask_admission_requirements_el
+  - ask_admission_requirements_en
+  - ask_tuition_fees_el
+  - ask_tuition_fees_en
+  - ask_duration_el
+  - ask_duration_en
+  - ask_curriculum_structure_el
+  - ask_curriculum_structure_en
+  - ask_courses_list_el
+  - ask_courses_list_en
+  - ask_application_deadline_el
+  - ask_application_deadline_en
+  - ask_attendance_mode_el
+  - ask_attendance_mode_en
+  - ask_study_intensity_el
+  - ask_study_intensity_en
+  - goodbye_el
+  - goodbye_en
+  - bot_challenge_el
+  - bot_challenge_en
+  - affirm_el
+  - affirm_en
+  - deny_el
+  - deny_en
+  - stress_deadline_el
+  - stress_deadline_en
+  - ask_contact_el
+  - ask_contact_en
+  - ask_location_el
+  - ask_location_en
+  - thankyou_el
+  - thankyou_en
+  - insult_el
+  - insult_en
+
+actions:
+  - action_custom_fallback
+
+slots:
+  lang:
+    type: text
+    influence_conversation: true
+    mappings:
+      # ==================== ΕΛΛΗΝΙΚΑ INTENTS ====================
+      - type: from_intent
+        value: el
+        intent: greet_el
+      - type: from_intent
+        value: el
+        intent: ask_admission_requirements_el
+      - type: from_intent
+        value: el
+        intent: ask_tuition_fees_el
+      - type: from_intent
+        value: el
+        intent: ask_duration_el
+      - type: from_intent
+        value: el
+        intent: ask_curriculum_structure_el
+      - type: from_intent
+        value: el
+        intent: ask_courses_list_el
+      - type: from_intent
+        value: el
+        intent: ask_application_deadline_el
+      - type: from_intent
+        value: el
+        intent: ask_attendance_mode_el
+      - type: from_intent
+        value: el
+        intent: ask_study_intensity_el
+      - type: from_intent
+        value: el
+        intent: goodbye_el
+      - type: from_intent
+        value: el
+        intent: bot_challenge_el
+      - type: from_intent
+        value: el
+        intent: affirm_el
+      - type: from_intent
+        value: el
+        intent: deny_el
+      - type: from_intent
+        value: el
+        intent: stress_deadline_el
+      - type: from_intent
+        value: el
+        intent: ask_contact_el
+      - type: from_intent
+        value: el
+        intent: ask_location_el
+      - type: from_intent
+        value: el
+        intent: thankyou_el
+      - type: from_intent
+        value: el
+        intent: insult_el
+
+      # ==================== ΑΓΓΛΙΚΑ INTENTS ====================
+      - type: from_intent
+        value: en
+        intent: greet_en
+      - type: from_intent
+        value: en
+        intent: ask_admission_requirements_en
+      - type: from_intent
+        value: en
+        intent: ask_tuition_fees_en
+      - type: from_intent
+        value: en
+        intent: ask_duration_en
+      - type: from_intent
+        value: en
+        intent: ask_curriculum_structure_en
+      - type: from_intent
+        value: en
+        intent: ask_courses_list_en
+      - type: from_intent
+        value: en
+        intent: ask_application_deadline_en
+      - type: from_intent
+        value: en
+        intent: ask_attendance_mode_en
+      - type: from_intent
+        value: en
+        intent: ask_study_intensity_en
+      - type: from_intent
+        value: en
+        intent: goodbye_en
+      - type: from_intent
+        value: en
+        intent: bot_challenge_en
+      - type: from_intent
+        value: en
+        intent: affirm_en
+      - type: from_intent
+        value: en
+        intent: deny_en
+      - type: from_intent
+        value: en
+        intent: stress_deadline_en
+      - type: from_intent
+        value: en
+        intent: ask_contact_en
+      - type: from_intent
+        value: en
+        intent: ask_location_en
+      - type: from_intent
+        value: en
+        intent: thankyou_en
+      - type: from_intent
+        value: en
+        intent: insult_en
+
+entities:
+  - semester
+
+responses:
+  utter_greet_en:
+  - text: "Hello! Thank you for contacting us. How may I help you?"
+
+  utter_greet_el:
+    - text: "Γεια σας! Χαίρομαι που επικοινωνείτε μαζί μας. Τι θα θέλατε να μάθετε;"
+    
+  utter_ask_admission_requirements_el:
+    - text: "Για την εισαγωγή στο ΠΜΣ απαιτείται πτυχίο Πληροφορικής, Μηχανικών ή συναφών επιστημών, πιστοποιητικό καλής γνώσης Αγγλικών (επίπεδο Β2), αναλυτική βαθμολογία, βιογραφικό σημείωμα και δύο συστατικές επιστολές."
+
+  utter_ask_admission_requirements_en:
+    - text: "Admission to the MSc requires a bachelor's degree in Computer Science, Engineering, or related fields, proof of English proficiency (B2 level), official transcripts, a CV, and two recommendation letters."
+
+  utter_ask_tuition_fees_el:
+    - text: "Το συνολικό κόστος των διδάκτρων είναι 1.800€. Για την εγγραφή απαιτούνται 30€, ενώ το κόστος ανά εξάμηνο είναι 600€ (καταβάλλεται σε δύο δόσεις: 300€ στην αρχή και 300€ στο τέλος του εξαμήνου). Σημειώστε ότι παρέχεται πλήρης απαλλαγή από τα δίδακτρα στους φοιτητές που πληρούν τα θεσμοθετημένα οικονομικά ή κοινωνικά κριτήρια σύμφωνα με τον νόμο."
+
+  utter_ask_tuition_fees_en:
+    - text: "The total cost of tuition fees is €1,800. Registration requires €30, and the cost per semester is €600 (paid in two installments: €300 at the beginning and €300 at the end of the semester). Please note that a full tuition fee exemption is provided to students who meet the established financial or social criteria according to the law."
+
+  utter_ask_duration_el:
+    - text: "Η κανονική διάρκεια των σπουδών για την απονομή του Μεταπτυχιακού Διπλώματος είναι 3 ακαδημαϊκά εξάμηνα. Τα δύο πρώτα εξάμηνα περιλαμβάνουν την παρακολούθηση μαθημάτων, ενώ το τρίτο εξάμηνο είναι αφιερωμένο στην εκπόνηση της μεταπτυχιακής διπλωματικής εργασίας."
+
+  utter_ask_duration_en:
+    - text: "The normal duration of studies for the award of the Master's Degree is 3 academic semesters. The first two semesters include course attendance, while the third semester is dedicated to the preparation of the master's thesis."
+
+  utter_ask_curriculum_structure_el:
+    - text: |
+        Το πρόγραμμα είναι ευέλικτο και λειτουργεί ως εξής:
+        - Α' Εξάμηνο: Επιλέγετε 4 μαθήματα συνολικά (2 Υποχρεωτικά και 2 Επιλογής από μια λίστα 5 μαθημάτων).
+        - Β' Εξάμηνο: Επιλέγετε 4 μαθήματα συνολικά (Όλα είναι ελεύθερης επιλογής από μια λίστα 7 μαθημάτων).
+        - Γ' Εξάμηνο: Αφιερώνεται αποκλειστικά στην εκπόνηση της Μεταπτυχιακής Διπλωματικής Εργασίας.
+
+  utter_ask_curriculum_structure_en:
+    - text: |
+        The program is flexible and works as follows:
+        - 1st Semester: You select 4 courses in total (2 Compulsory and 2 Electives from a list of 5 courses).
+        - 2nd Semester: You select 4 courses in total (All are electives from a list of 7 courses).
+        - 3rd Semester: Dedicated exclusively to the Master's Thesis.
+
+  # Απαντήσεις για την Ακριβή Λίστα Μαθημάτων με ένα ενιαίο Link
+  utter_ask_courses_list_el:
+    - text: |
+        Ακολουθεί η πλήρης λίστα των μαθημάτων του ΠΜΣ:
+        
+        1ο Εξάμηνο:
+        • Υποχρεωτικά: 
+            1) Διαδίκτυο των Αντικειμένων
+            2) Αλληλεπίδραση Ανθρώπου-Υπολογιστή
+
+        • Επιλογής (επιλέγετε 2): 
+            3) Συνεργατικές Τεχνολογίες
+            4) Στατιστική Ανάλυση Δεδομένων
+            5) Κυβερνοασφάλεια: Λογισμικό και Συστήματα
+            6) Διοίκηση έργων πληροφορικής και Επιχειρηματικότητα
+            7) Ανάλυση δεδομένων μάθησης.
+        
+        2ο Εξάμηνο (Όλα Επιλογής - επιλέγετε 4):
+            1) Διαλογικοί Πράκτορες
+            2) Τεχνικές Βελτιστοποίησης
+            3) Συσχεδίαση Υλικού και Λογισμικού
+            4) Φορητές και κινητές τεχνολογίες
+            5) Σοβαρά παιχνίδια
+            6) Ενσωματωμένα και κυβερνοφυσικά συστήματα
+            7) Διαδραστικές Εφαρμογές Φορητών Συσκευών
+        
+        3ο Εξάμηνο:
+        • Μεταπτυχιακή Διπλωματική Εργασία.
+        
+        Μπορείτε να διαβάσετε την αναλυτική περιγραφή για το περιεχόμενο του κάθε μαθήματος εδώ: https://ihst.csd.auth.gr/courses/
+
+  utter_ask_courses_list_en:
+    - text: |
+        Here is the complete list of courses for the MSc:
+        
+        1st Semester:
+        • Compulsory: 
+            1) Internet of Things
+            2) Human-Computer Interaction
+        • Electives (choose 2): 
+            3) Collaborative Technologies
+            4) Statistical Data Analysis
+            5) Cybersecurity: Software and Systems
+            6) IT Project Management and Entrepreneurship
+            7) Learning Data Analytics
+        
+        2nd Semester (All Electives - choose 4):
+          1) Conversational Agents
+          2) Optimization Techniques
+          3) Hardware and Software Co-design
+          4) Portable and Mobile Technologies
+          5) Serious Games
+          6) Embedded and Cyber-Physical Systems
+          7) Interactive Applications for Mobile Devices.
+        
+        3rd Semester:
+        • Master's Thesis.
+        
+        You can read the detailed syllabus and description for each course here: https://ihst.csd.auth.gr/courses/
+
+  utter_ask_application_deadline_el:
+    - text: "Η περίοδος υποβολής των αιτήσεων ξεκινά συνήθως κατά τους ανοιξιάτικους μήνες (Μάιο - Ιούνιο) μετά τη δημοσίευση της επίσημης προκήρυξης. Για να δείτε την ακριβή τρέχουσα προθεσμία και να κατεβάσετε την προκήρυξη, παρακαλούμε ελέγξτε τις επίσημες ανακοινώσεις του ΠΜΣ εδώ: https://ihst.csd.auth.grhttps://ihst.csd.auth.gr/category/announcements/"
+
+  utter_ask_application_deadline_en:
+    - text: "The application period usually starts during the spring months (May - June) following the publication of the official call for applications. To check the exact current deadline and download the call, please check the official MSc announcements here: https://ihst.csd.auth.gr/category/announcements/"
+  
+  utter_ask_attendance_mode_el:
+    - text: "Το ΠΜΣ είναι κατά βάση διά ζώσης. Ωστόσο, υπάρχει η ευελιξία και η τεχνική δυνατότητα, εφόσον το επιθυμεί ο διδάσκων καθηγητής, κάποια μαθήματα ή διαλέξεις να πραγματοποιηθούν εξ αποστάσεως μέσω τηλεκπαίδευσης."
+
+  utter_ask_attendance_mode_en:
+    - text: "The MSc is primarily face-to-face (on-campus). However, there is flexibility, and if the instructor/professor wishes so, certain courses or lectures can be conducted remotely via distance learning."
+  
+  utter_ask_study_intensity_el:
+    - text: "Ναι, παρέχεται η δυνατότητα μερικής φοίτησης για εργαζόμενους φοιτητές που αποδεδειγμένα εργάζονται τουλάχιστον 20 ώρες την εβδομάδα, καθώς και για άλλες ειδικές κατηγορίες (π.χ. λόγοι υγείας). Σε αυτή την περίπτωση, η διάρκεια σπουδών μπορεί να επιμηκυνθεί έως και το διπλάσιο της κανονικής (δηλαδή έως 6 εξάμηνα)."
+
+  utter_ask_study_intensity_en:
+    - text: "Yes, a part-time study option is available for working students who can prove they work at least 20 hours per week, as well as for other special categories (e.g., health reasons). In this case, the duration of studies can be extended up to twice the normal duration (meaning up to 6 semesters)."
+
+  utter_goodbye_el:
+    - text: "Αντίο! Καλή σας μέρα!"
+
+  utter_goodbye_en:
+    - text: "Goodbye! Have a great day!"
+
+  utter_iamabot_el:
+    - text: "Είμαι ο ψηφιακός βοηθός (bot) του μεταπτυχιακού, βασισμένος στην πλατφόρμα Rasa!"
+
+  utter_iamabot_en:
+    - text: "I am the digital assistant (bot) for the MSc, powered by Rasa!"
+
+  utter_affirm_el:
+    - text: "Τέλεια, προχωράμε!"
+    - text: "Έγινε!"
+
+  utter_affirm_en:
+    - text: "Great, let's proceed!"
+    - text: "Alright!"
+
+  utter_deny_el:
+    - text: "Λυπάμαι που δεν μπόρεσα να βοηθήσω. Μπορώ να βοηθήσω με κάτι άλλο;"
+
+  utter_deny_en:
+    - text: "I'm sorry I couldn't help. Can I help you with something else?"
+
+  utter_fallback_el:
+    - text: "Λυπάμαι, δεν κατάλαβα τι εννοείτε. Μπορείτε να διατυπώσετε την ερώτησή σας διαφορετικά;"
+
+  utter_fallback_en:
+    - text: "I'm sorry, I didn't quite understand. Could you please rephrase your question?"
+
+  utter_fallback_both:
+  - text: "Λυπάμαι, δεν κατάλαβα. / I'm sorry, I didn't understand."
+
+  utter_stress_deadline_el:
+    - text: "Μην ανησυχείτε καθόλου, το άγχος είναι απόλυτα φυσιολογικό! Οι προθεσμίες συχνά παίρνουν παράταση. Ακόμα κι αν έληξε, μπορείτε να στείλετε ένα email στη γραμματεία για να δείτε αν δέχονται εκπρόθεσμες αιτήσεις."
+
+  utter_stress_deadline_en:
+    - text: "Don't worry at all, it's completely normal to feel stressed! Deadlines often get extended. Even if it has passed, you can send an email to the secretariat to see if they accept late applications."
+
+  utter_ask_contact_el:
+    - text: |
+        Μπορείτε να επικοινωνήσετε με το ΠΜΣ στα παρακάτω στοιχεία:
+        
+        **Γραμματεία:**
+        • Υπεύθυνη: Τρίκκα Ειρήνη
+        • Τηλέφωνο: 2310998930
+        • Email: eitrikka@csd.auth.gr, pms_info@csd.auth.gr
+        
+        **Διευθυντής Μεταπτυχιακού:**
+        • Κονοφάος Νικόλαος
+        • Email: nkonofao@csd.auth.gr
+
+  utter_ask_contact_en:
+    - text: |
+        You can contact the Master's Program using the details below:
+        
+        **Secretariat:**
+        • Responsible: Trikka Eirini
+        • Phone: 2310998930
+        • Email: eitrikka@csd.auth.gr, pms_info@csd.auth.gr
+        
+        **Program Director:**
+        • Konofaos Nikolaos
+        • Email: nkonofao@csd.auth.gr
+  
+  utter_ask_location_el:
+    - text: |
+        Οι τοποθεσίες του ΠΜΣ είναι οι εξής:
+        
+        **Γραμματεία:**
+        Βρίσκεται στον Ημιώροφο του Τμήματος Πληροφορικής ΑΠΘ, στο Κτίριο της Βιολογίας.
+        
+        **Διεξαγωγή Μαθημάτων:**
+        Τα μαθήματα πραγματοποιούνται στο Παράρτημα του Τμήματος Πληροφορικής, Εθνικής Αντιστάσεως 16, Καλαμαριά (2ος όροφοος).
+
+  utter_ask_location_en:
+    - text: |
+        The locations of the Master's Program are:
+        
+        **Secretariat:**
+        Located at the Mezzanine floor of the Department of Informatics, AUTh, Biology Building.
+        
+        **Course Location:**
+        Lectures take place at the Department of Informatics Annex, 16 Ethnikis Antistaseos Str., Kalamaria (2nd floor).
+
+  utter_thankyou_el:
+    - text: "Παρακαλώ! Είμαι πάντα εδώ για να βοηθήσω! Χρειάζεστε κάτι άλλο;"
+    - text: "Χαρά μου να βοηθήσω! Χρειάζεστε κάτι άλλο;"
+
+  utter_thankyou_en:
+    - text: "You're welcome! I'm always here to help! Do you need anything else?"
+    - text: "Glad I could help! Do you need anything else?"
+
+  utter_insult_el:
+    - text: "Λυπάμαι που σας απογοήτευσα. Είμαι ακόμα ένας ψηφιακός βοηθός υπό εκπαίδευση! Πώς μπορώ να σας βοηθήσω καλύτερα ή τι πληροφορία ψάχνετε για το μεταπτυχιακό;"
+
+  utter_insult_en:
+    - text: "I'm sorry to disappoint you. I am still an AI assistant in training! How can I help you better, or what information are you looking for regarding the Master's program?"
+    
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
