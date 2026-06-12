@@ -11,6 +11,8 @@ rasa-frontend/*.local
 # 🤖 RASA BACKEND
 # =====================================================================
 rasa-backend/.rasa/
+rasa-backend/.rasa/*
+rasa-backend/.rasa/cache/
 rasa-backend/models/
 rasa-backend/.venv/
 rasa-backend/venv/
