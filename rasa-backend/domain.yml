@@ -23,10 +23,6 @@ intents:
   - goodbye_en
   - bot_challenge_el
   - bot_challenge_en
-  - affirm_el
-  - affirm_en
-  - deny_el
-  - deny_en
   - stress_deadline_el
   - stress_deadline_en
   - ask_contact_el
@@ -43,6 +39,11 @@ intents:
   - deny_anything_else_en
   - change_lang_to_en
   - change_lang_to_el
+  # 🌟 ΠΡΟΣΘΕΘΗΚΑΝ ΕΔΩ ΓΙΑ ΝΑ ΜΗΝ ΞΑΝΑΒΓΑΛΕΙ WARNING ΣΤΟ ΤΕΡΜΑΤΙΚΟ:
+  - affirm_el
+  - deny_el
+  - affirm_en
+  - deny_en
 
 actions:
   - action_custom_fallback
@@ -88,12 +89,6 @@ slots:
         intent: bot_challenge_el
       - type: from_intent
         value: el
-        intent: affirm_el
-      - type: from_intent
-        value: el
-        intent: deny_el
-      - type: from_intent
-        value: el
         intent: stress_deadline_el
       - type: from_intent
         value: el
@@ -109,10 +104,10 @@ slots:
         intent: insult_el
       - type: from_intent
         value: el
-        intent: affirm_anything_else_el   # 👈 Προσθήκη στο Slot Mapping
+        intent: affirm_anything_else_el
       - type: from_intent
         value: el
-        intent: deny_anything_else_el     # 👈 Προσθήκη στο Slot Mapping
+        intent: deny_anything_else_el
       - type: from_intent
         value: el
         intent: change_lang_to_el
@@ -153,12 +148,6 @@ slots:
         intent: bot_challenge_en
       - type: from_intent
         value: en
-        intent: affirm_en
-      - type: from_intent
-        value: en
-        intent: deny_en
-      - type: from_intent
-        value: en
         intent: stress_deadline_en
       - type: from_intent
         value: en
@@ -174,10 +163,10 @@ slots:
         intent: insult_en
       - type: from_intent
         value: en
-        intent: affirm_anything_else_en   # 👈 Προσθήκη στο Slot Mapping
+        intent: affirm_anything_else_en
       - type: from_intent
         value: en
-        intent: deny_anything_else_en     # 👈 Προσθήκη στο Slot Mapping
+        intent: deny_anything_else_en
       - type: from_intent
         value: en
         intent: change_lang_to_en
@@ -314,20 +303,6 @@ responses:
   utter_iamabot_en:
     - text: "I am the digital assistant (bot) for the MSc, powered by Rasa!"
 
-  utter_affirm_el:
-    - text: "Τέλεια, προχωράμε!"
-    - text: "Έγινε!"
-
-  utter_affirm_en:
-    - text: "Great, let's proceed!"
-    - text: "Alright!"
-
-  utter_deny_el:
-    - text: "Λυπάμαι που δεν μπόρεσα να βοηθήσω. Μπορώ να βοηθήσω με κάτι άλλο;"
-
-  utter_deny_en:
-    - text: "I'm sorry I couldn't help. Can I help you with something else?"
-
   utter_fallback_el:
     - text: "Λυπάμαι, δεν κατάλαβα τι εννοείτε. Μπορείτε να διατυπώσετε την ερώτησή σας διαφορετικά;"
 
@@ -335,7 +310,7 @@ responses:
     - text: "I'm sorry, I didn't quite understand. Could you please rephrase your question?"
 
   utter_fallback_both:
-    - text: "Λυπάμαι, δεν κατάλαβα. / I'm sorry, I didn't understand."
+    - text: "Λυμαι, δεν κατάλαβα. / I'm sorry, I didn't understand."
 
   utter_stress_deadline_el:
     - text: "Μην ανησυχείτε καθόλου, το άγχος είναι απόλυτα φυσιολογικό! Οι προθεσμίες συχνά παίρνουν παράταση. Ακόμα κι αν έληξε, μπορείτε να στείλετε ένα email στη γραμματεία για να δείτε αν δέχονται εκπρόθεσμες αιτήσεις."
@@ -407,87 +382,87 @@ responses:
     - text: "Θέλετε να δούμε και την αναλυτική λίστα των μαθημάτων ανά εξάμηνο;"
       buttons:
         - title: "Ναι, φυσικά!"
-          payload: "/affirm_el"
+          payload: "/affirm_anything_else_el"
         - title: "Όχι, ευχαριστώ"
-          payload: "/deny_el"
+          payload: "/deny_anything_else_el"
 
   utter_suggest_courses_list_en:
     - text: "Would you like to see the detailed list of courses per semester as well?"
       buttons:
         - title: "Yes, please!"
-          payload: "/affirm_en"
+          payload: "/affirm_anything_else_en"
         - title: "No, thanks"
-          payload: "/deny_en"
+          payload: "/deny_anything_else_en"
 
   utter_suggest_tuition_fees_el:
     - text: "Θέλετε να ενημερωθείτε και για το κόστος των διδάκτρων του προγράμματος?"
       buttons:
         - title: "Ναι, θα ήθελα"
-          payload: "/affirm_el"
-        - title: "Όχι, ευχαριστώ" # 👈 Διορθώθηκε το Syntax Error (έλειπε εισαγωγικό)
-          payload: "/deny_el"
+          payload: "/affirm_anything_else_el"
+        - title: "Όχι, ευχαριστώ"
+          payload: "/deny_anything_else_el"
 
   utter_suggest_tuition_fees_en:
     - text: "Would you like to get informed about the tuition fees of the program as well?"
       buttons:
         - title: "Yes, please"
-          payload: "/affirm_en"
+          payload: "/affirm_anything_else_en"
         - title: "No, thanks"
-          payload: "/deny_en"
+          payload: "/deny_anything_else_en"
 
   utter_suggest_contact_el:
     - text: "Θέλετε να σας δώσω και τα τηλέφωνα ή τα email επικοινωνίας της γραμματείας και του διευθυντή;"
       buttons:
         - title: "Ναι, δείξε μου"
-          payload: "/affirm_el"
+          payload: "/affirm_anything_else_el"
         - title: "Όχι, δεν χρειάζεται"
-          payload: "/deny_el"
+          payload: "/deny_anything_else_el"
 
   utter_suggest_contact_en:
     - text: "Would you like to see the phone numbers or emails for the secretariat and the director as well?"
       buttons:
         - title: "Yes, show me"
-          payload: "/affirm_en"
+          payload: "/affirm_anything_else_en"
         - title: "No, thanks"
-          payload: "/deny_en"
+          payload: "/deny_anything_else_en"
 
   utter_suggest_check_deadline_el:
     - text: "Θέλετε να δούμε μαζί ποιες είναι οι επίσημες ημερομηνίες και αν προλαβαίνετε να κάνετε αίτηση;"
       buttons:
         - title: "Ναι, ας δούμε"
-          payload: "/affirm_el"
+          payload: "/affirm_anything_else_el"
         - title: "Όχι, ευχαριστώ"
-          payload: "/deny_el"
+          payload: "/deny_anything_else_el"
 
   utter_suggest_check_deadline_en:
     - text: "Would you like to check the official dates together to see if you can still apply?"
       buttons:
         - title: "Yes, let's check"
-          payload: "/affirm_en"
+          payload: "/affirm_anything_else_en"
         - title: "No, thanks"
-          payload: "/deny_en"
+          payload: "/deny_anything_else_en"
 
   utter_suggest_study_intensity_el:
     - text: "Γνωρίζετε ότι υπάρχει και η δυνατότητα μερικής φοίτησης (έως 6 εξάμηνα) για εργαζόμενους;"
       buttons:
         - title: "Θέλω να μάθω περισσότερα"
-          payload: "/affirm_el"
+          payload: "/affirm_anything_else_el"
         - title: "Όχι, είμαι εντάξει"
-          payload: "/deny_el"
+          payload: "/deny_anything_else_el"
 
   utter_suggest_study_intensity_en:
     - text: "Did you know that there is a part-time study option (up to 6 semesters) for working students?"
       buttons:
         - title: "Tell me more"
-          payload: "/affirm_en"
+          payload: "/affirm_anything_else_en"
         - title: "No, I'm fine"
-          payload: "/deny_en"
+          payload: "/deny_anything_else_en"
 
   utter_anything_else_el:
     - text: "Μπορώ να σας βοηθήσω με κάτι άλλο;"
       buttons:
         - title: "Ναι, έχω μια ερώτηση"
-          payload: "/affirm_anything_else_el" 
+          payload: "/affirm_anything_else_el"
         - title: "Όχι, ευχαριστώ"
           payload: "/deny_anything_else_el"
 
@@ -495,7 +470,7 @@ responses:
     - text: "Φυσικά! Με τι άλλο θα μπορούσα να σας βοηθήσω; Γράψτε μου την ερώτησή σας."
 
   utter_goodbye_el:
-    - text: "Χάρηκα που βοηθήσαλα! Καλή συνέχεια και καλή επιτυχία στις σπουδές σας!"
+    - text: "Χάρηκα που βοηθήσα! Καλή συνέχεια και καλή επιτυχία στις σπουδές σας!"
 
   utter_anything_else_en:
     - text: "Can I help you with anything else?"
@@ -510,6 +485,18 @@ responses:
 
   utter_goodbye_en:
     - text: "Glad I could help! Have a great day and best of luck with your studies!"
+
+  utter_affirm_el:
+    - text: "Έγινε! Μπορώ να σας βοηθήσω με κάτι άλλο;"
+
+  utter_deny_el:
+    - text: "Λυπάμαι που δεν μπόρεσα να βοηθήσω. Μπορώ να σας βοηθήσω με κάτι άλλο;"
+
+  utter_affirm_en:
+    - text: "Alright! Can I help you with anything else?"
+
+  utter_deny_en:
+    - text: "I'm sorry I couldn't help. Can I help you with something else?"
 
 session_config:
   session_expiration_time: 60

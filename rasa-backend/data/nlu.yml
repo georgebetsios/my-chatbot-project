@@ -310,6 +310,7 @@ nlu:
     - are you a human?
     - am I talking to a robot?
 
+# ==================== ΒΑΣΙΚΑ INTENTS (ΜΟΝΟΛΕΚΤΙΚΑ) ====================
 - intent: affirm_el
   examples: |
     - ναι
@@ -336,6 +337,37 @@ nlu:
     - no
     - never
     - I don't think so
+
+# ==================== CUSTOM INTENTS ΓΙΑ ΤΑ ΚΟΥΜΠΙΑ ====================
+- intent: affirm_anything_else_el
+  examples: |
+    - Ναι, έχω μια ερώτηση
+    - Ναι, ας δούμε
+    - Ναι, φυσικά!
+    - Ναι, θα ήθελα
+    - Ναι, δείξε μου
+    - Θέλω να μάθω περισσότερα
+
+- intent: deny_anything_else_el
+  examples: |
+    - Όχι, ευχαριστώ
+    - Όχι, δεν χρειάζεται
+    - Όχι, είμαι εντάξει
+
+- intent: affirm_anything_else_en
+  examples: |
+    - Yes, I have a question
+    - Yes, please!
+    - Yes, please
+    - Yes, show me
+    - Let's check
+    - Tell me more
+
+- intent: deny_anything_else_en
+  examples: |
+    - No, thank you
+    - No, thanks
+    - No, I'm fine
 
 - intent: stress_deadline_el
   examples: |

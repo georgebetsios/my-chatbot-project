@@ -74,26 +74,6 @@ stories:
 # 3. DEFAULT ΑΥΤΟΝΟΜΕΣ ΕΠΙΒΕΒΑΙΩΣΕΙΣ / ΑΡΝΗΣΕΙΣ (ΕΚΤΟΣ ΡΟΩΝ)
 # ==========================================================================
 
-- story: Επιβεβαίωση χρήστη ελληνικά (Ναι)
-  steps:
-  - intent: affirm_el
-  - action: utter_affirm_el
-
-- story: User affirmation english (Yes)
-  steps:
-  - intent: affirm_en
-  - action: utter_affirm_en
-
-- story: Άρνηση χρήστη ελληνικά (Όχι)
-  steps:
-  - intent: deny_el
-  - action: utter_deny_el
-
-- story: User denial english (No)
-  steps:
-  - intent: deny_en
-  - action: utter_deny_en
-
 - story: Αντίο ελληνικά
   steps:
   - intent: goodbye_el
@@ -114,7 +94,7 @@ stories:
   - intent: ask_curriculum_structure_el
   - action: utter_ask_curriculum_structure_el
   - action: utter_suggest_courses_list_el
-  - intent: affirm_el
+  - intent: affirm_anything_else_el
   - action: utter_ask_courses_list_el
   - action: utter_anything_else_el
 
@@ -123,7 +103,7 @@ stories:
   - intent: ask_curriculum_structure_el
   - action: utter_ask_curriculum_structure_el
   - action: utter_suggest_courses_list_el
-  - intent: deny_el
+  - intent: deny_anything_else_el
   - action: utter_goodbye_el
 
 - story: Curriculum structure to courses list flow (English - Yes)
@@ -131,7 +111,7 @@ stories:
   - intent: ask_curriculum_structure_en
   - action: utter_ask_curriculum_structure_en
   - action: utter_suggest_courses_list_en
-  - intent: affirm_en
+  - intent: affirm_anything_else_en
   - action: utter_ask_courses_list_en
   - action: utter_anything_else_en
 
@@ -140,7 +120,7 @@ stories:
   - intent: ask_curriculum_structure_en
   - action: utter_ask_curriculum_structure_en
   - action: utter_suggest_courses_list_en
-  - intent: deny_en
+  - intent: deny_anything_else_en
   - action: utter_goodbye_en
 
 
@@ -153,7 +133,7 @@ stories:
   - intent: ask_application_deadline_el
   - action: utter_ask_application_deadline_el
   - action: utter_suggest_tuition_fees_el
-  - intent: affirm_el
+  - intent: affirm_anything_else_el
   - action: utter_ask_tuition_fees_el
   - action: utter_anything_else_el
 
@@ -162,7 +142,7 @@ stories:
   - intent: ask_application_deadline_el
   - action: utter_ask_application_deadline_el
   - action: utter_suggest_tuition_fees_el
-  - intent: deny_el
+  - intent: deny_anything_else_el
   - action: utter_goodbye_el
 
 - story: Application deadline to tuition fees flow (English - Yes)
@@ -170,7 +150,7 @@ stories:
   - intent: ask_application_deadline_en
   - action: utter_ask_application_deadline_en
   - action: utter_suggest_tuition_fees_en
-  - intent: affirm_en
+  - intent: affirm_anything_else_en
   - action: utter_ask_tuition_fees_en
   - action: utter_anything_else_en
 
@@ -179,7 +159,7 @@ stories:
   - intent: ask_application_deadline_en
   - action: utter_ask_application_deadline_en
   - action: utter_suggest_tuition_fees_en
-  - intent: deny_en
+  - intent: deny_anything_else_en
   - action: utter_goodbye_en
 
 
@@ -192,7 +172,7 @@ stories:
   - intent: ask_location_el
   - action: utter_ask_location_el
   - action: utter_suggest_contact_el
-  - intent: affirm_el
+  - intent: affirm_anything_else_el
   - action: utter_ask_contact_el
   - action: utter_anything_else_el
 
@@ -201,7 +181,7 @@ stories:
   - intent: ask_location_el
   - action: utter_ask_location_el
   - action: utter_suggest_contact_el
-  - intent: deny_el
+  - intent: deny_anything_else_el
   - action: utter_goodbye_el
 
 - story: Location to contact details flow (English - Yes)
@@ -209,7 +189,7 @@ stories:
   - intent: ask_location_en
   - action: utter_ask_location_en
   - action: utter_suggest_contact_en
-  - intent: affirm_en
+  - intent: affirm_anything_else_en
   - action: utter_ask_contact_en
   - action: utter_anything_else_en
 
@@ -218,7 +198,7 @@ stories:
   - intent: ask_location_en
   - action: utter_ask_location_en
   - action: utter_suggest_contact_en
-  - intent: deny_en
+  - intent: deny_anything_else_en
   - action: utter_goodbye_en
 
 
@@ -231,7 +211,7 @@ stories:
   - intent: stress_deadline_el
   - action: utter_stress_deadline_el
   - action: utter_suggest_check_deadline_el
-  - intent: affirm_el
+  - intent: affirm_anything_else_el
   - action: utter_ask_application_deadline_el
   - action: utter_anything_else_el
 
@@ -240,7 +220,7 @@ stories:
   - intent: stress_deadline_el
   - action: utter_stress_deadline_el
   - action: utter_suggest_check_deadline_el
-  - intent: deny_el
+  - intent: deny_anything_else_el
   - action: utter_goodbye_el
 
 - story: Stress deadline to check application deadline flow (English - Yes)
@@ -248,7 +228,7 @@ stories:
   - intent: stress_deadline_en
   - action: utter_stress_deadline_en
   - action: utter_suggest_check_deadline_en
-  - intent: affirm_en
+  - intent: affirm_anything_else_en
   - action: utter_ask_application_deadline_en
   - action: utter_anything_else_en
 
@@ -257,7 +237,7 @@ stories:
   - intent: stress_deadline_en
   - action: utter_stress_deadline_en
   - action: utter_suggest_check_deadline_en
-  - intent: deny_en
+  - intent: deny_anything_else_en
   - action: utter_goodbye_en
 
 
@@ -270,7 +250,7 @@ stories:
   - intent: ask_duration_el
   - action: utter_ask_duration_el
   - action: utter_suggest_study_intensity_el
-  - intent: affirm_el
+  - intent: affirm_anything_else_el
   - action: utter_ask_study_intensity_el
   - action: utter_anything_else_el
 
@@ -279,7 +259,7 @@ stories:
   - intent: ask_duration_el
   - action: utter_ask_duration_el
   - action: utter_suggest_study_intensity_el
-  - intent: deny_el
+  - intent: deny_anything_else_el
   - action: utter_goodbye_el
 
 - story: Duration of studies to part time option flow (English - Yes)
@@ -287,7 +267,7 @@ stories:
   - intent: ask_duration_en
   - action: utter_ask_duration_en
   - action: utter_suggest_study_intensity_en
-  - intent: affirm_en
+  - intent: affirm_anything_else_en
   - action: utter_ask_study_intensity_en
   - action: utter_anything_else_en
 
@@ -296,5 +276,35 @@ stories:
   - intent: ask_duration_en
   - action: utter_ask_duration_en
   - action: utter_suggest_study_intensity_en
-  - intent: deny_en
+  - intent: deny_anything_else_en
+  - action: utter_goodbye_en
+
+
+# ==================== ΔΙΑΧΕΙΡΙΣΗ FOLLOW-UP (ΕΛΛΗΝΙΚΑ) ====================
+
+- story: Standard follow-up - Ο χρήστης θέλει κι άλλο (Ναι)
+  steps:
+  - action: utter_anything_else_el
+  - intent: affirm_anything_else_el
+  - action: utter_what_else_el
+
+- story: Standard follow-up - Ο χρήστης τελείωσε (Όχι)
+  steps:
+  - action: utter_anything_else_el
+  - intent: deny_anything_else_el
+  - action: utter_goodbye_el
+
+
+# ==================== ΔΙΑΧΕΙΡΙΣΗ FOLLOW-UP (ENGLISH) ====================
+
+- story: Standard follow-up - User wants more (Yes)
+  steps:
+  - action: utter_anything_else_en
+  - intent: affirm_anything_else_en
+  - action: utter_what_else_en
+
+- story: Standard follow-up - User is done (No)
+  steps:
+  - action: utter_anything_else_en
+  - intent: deny_anything_else_en
   - action: utter_goodbye_en

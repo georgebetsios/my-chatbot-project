@@ -27,18 +27,6 @@ rules:
   - action: utter_insult_el
   - action: utter_anything_else_el
 
-# --- ΔΙΑΧΕΙΡΙΣΗ STANDARD ΕΡΩΤΗΣΗΣ (GR) ---
-- rule: Ο χρήστης θέλει κι άλλη βοήθεια (GR - Ναι)
-  steps:
-  - intent: affirm_anything_else_el
-  - action: utter_what_else_el
-
-- rule: Ο χρήστης τελείωσε (GR - Όχι)
-  steps:
-  - intent: deny_anything_else_el
-  - action: utter_goodbye_el
-
-
 # ==================== ΑΓΓΛΙΚΟΙ ΚΑΝΟΝΕΣ ====================
 
 - rule: Say goodbye anytime the user says goodbye (EN)
@@ -64,18 +52,6 @@ rules:
   - action: utter_insult_en
   - action: utter_anything_else_en
 
-# --- ΔΙΑΧΕΙΡΙΣΗ STANDARD ΕΡΩΤΗΣΗΣ (EN) ---
-- rule: User wants more help (EN - Yes)
-  steps:
-  - intent: affirm_anything_else_en
-  - action: utter_what_else_en
-
-- rule: User is done (EN - No)
-  steps:
-  - intent: deny_anything_else_en
-  - action: utter_goodbye_en
-
-
 # ==================== FALLBACK ====================
 
 - rule: Ενεργοποίηση Custom Fallback
@@ -92,3 +68,25 @@ rules:
   steps:
   - intent: change_lang_to_el
   - action: utter_change_lang_to_el
+
+# ==================== ΔΙΚΛΙΔΕΣ ΑΣΦΑΛΕΙΑΣ ΓΙΑ ΣΚΕΤΑ ΝΑΙ/ΟΧΙ ====================
+
+- rule: Διαχείριση generic affirm (GR)
+  steps:
+  - intent: affirm_el
+  - action: utter_affirm_el
+
+- rule: Διαχείριση generic deny (GR)
+  steps:
+  - intent: deny_el
+  - action: utter_deny_el
+
+- rule: Διαχείριση generic affirm (EN)
+  steps:
+  - intent: affirm_en
+  - action: utter_affirm_en
+
+- rule: Διαχείριση generic deny (EN)
+  steps:
+  - intent: deny_en
+  - action: utter_deny_en
