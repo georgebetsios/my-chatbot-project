@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Chatbot.css'; // Για να του δώσουμε ωραίο στυλ
 import logoImg from './assets/logo-master.jpg';
+import ReactMarkdown from 'react-markdown';
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
@@ -94,7 +95,19 @@ export default function Chatbot() {
           <div className="chatbot-messages">
             {messages.map((msg, index) => (
               <div key={index} className={`message-bubble ${msg.sender}`}>
-                {msg.text.split('**').map((part, i) => i % 2 === 1 ? <strong key={i}>{part}</strong> : part)}
+                {/* Αν το μήνυμα είναι από το bot, χρησιμοποιούμε το ReactMarkdown για να δουλεύουν τα links */}
+                {msg.sender === 'bot' ? (
+                  <ReactMarkdown
+                    components={{
+                      a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" />
+                    }}
+                  >
+                    {msg.text}
+                  </ReactMarkdown>
+                ) : (
+                  /* Αν είναι του χρήστη, το αφήνουμε απλό κείμενο */
+                  msg.text
+                )}
               </div>
             ))}
             <div ref={messagesEndRef} />

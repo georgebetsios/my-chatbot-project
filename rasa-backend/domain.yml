@@ -189,35 +189,40 @@ responses:
   utter_ask_curriculum_structure_el:
     - text: |
         Το πρόγραμμα είναι ευέλικτο και λειτουργεί ως εξής:
-        - Α' Εξάμηνο: Επιλέγετε 4 μαθήματα συνολικά (2 Υποχρεωτικά και 2 Επιλογής από μια λίστα 5 μαθημάτων).
-        - Β' Εξάμηνο: Επιλέγετε 4 μαθήματα συνολικά (Όλα είναι ελεύθερης επιλογής από μια λίστα 7 μαθημάτων).
-        - Γ' Εξάμηνο: Αφιερώνεται αποκλειστικά στην εκπόνηση της Μεταπτυχιακής Διπλωματικής Εργασίας.
+
+        **Α' Εξάμηνο:** Επιλέγετε 4 μαθήματα συνολικά (2 Υποχρεωτικά και 2 Επιλογής από μια λίστα 5 μαθημάτων).
+
+        **Β' Εξάμηνο:** Επιλέγετε 4 μαθήματα συνολικά (Όλα είναι ελεύθερης επιλογής από μια λίστα 7 μαθημάτων).
+
+        **Γ' Εξάμηνο:** Αφιερώνεται αποκλειστικά στην εκπόνηση της Μεταπτυχιακής Διπλωματικής Εργασίας.
 
   utter_ask_curriculum_structure_en:
     - text: |
         The program is flexible and works as follows:
-        - 1st Semester: You select 4 courses in total (2 Compulsory and 2 Electives from a list of 5 courses).
-        - 2nd Semester: You select 4 courses in total (All are electives from a list of 7 courses).
-        - 3rd Semester: Dedicated exclusively to the Master's Thesis.
+
+        **1st Semester:** You select 4 courses in total (2 Compulsory and 2 Electives from a list of 5 courses).
+
+        **2nd Semester:** You select 4 courses in total (All are electives from a list of 7 courses).
+        
+        **3rd Semester:** Dedicated exclusively to the Master's Thesis.
 
   # Απαντήσεις για την Ακριβή Λίστα Μαθημάτων με ένα ενιαίο Link
   utter_ask_courses_list_el:
     - text: |
         Ακολουθεί η πλήρης λίστα των μαθημάτων του ΠΜΣ:
         
-        1ο Εξάμηνο:
-        • Υποχρεωτικά: 
+        **1ο Εξάμηνο:**
+        **• Υποχρεωτικά:** 
             1) Διαδίκτυο των Αντικειμένων
             2) Αλληλεπίδραση Ανθρώπου-Υπολογιστή
-
-        • Επιλογής (επιλέγετε 2): 
+        **• Επιλογής (επιλέγετε 2):** 
             3) Συνεργατικές Τεχνολογίες
             4) Στατιστική Ανάλυση Δεδομένων
             5) Κυβερνοασφάλεια: Λογισμικό και Συστήματα
             6) Διοίκηση έργων πληροφορικής και Επιχειρηματικότητα
             7) Ανάλυση δεδομένων μάθησης.
         
-        2ο Εξάμηνο (Όλα Επιλογής - επιλέγετε 4):
+        **2ο Εξάμηνο (Όλα Επιλογής - επιλέγετε 4):**
             1) Διαλογικοί Πράκτορες
             2) Τεχνικές Βελτιστοποίησης
             3) Συσχεδίαση Υλικού και Λογισμικού
@@ -226,27 +231,27 @@ responses:
             6) Ενσωματωμένα και κυβερνοφυσικά συστήματα
             7) Διαδραστικές Εφαρμογές Φορητών Συσκευών
         
-        3ο Εξάμηνο:
+        **3ο Εξάμηνο:**
         • Μεταπτυχιακή Διπλωματική Εργασία.
         
-        Μπορείτε να διαβάσετε την αναλυτική περιγραφή για το περιεχόμενο του κάθε μαθήματος εδώ: https://ihst.csd.auth.gr/courses/
+        Μπορείτε να διαβάσετε την αναλυτική περιγραφή για το περιεχόμενο του κάθε μαθήματος [εδώ](https://ihst.csd.auth.gr/courses/).
 
   utter_ask_courses_list_en:
     - text: |
         Here is the complete list of courses for the MSc:
         
-        1st Semester:
-        • Compulsory: 
+        **1st Semester:**
+        **• Compulsory:** 
             1) Internet of Things
             2) Human-Computer Interaction
-        • Electives (choose 2): 
+        **• Electives (choose 2):** 
             3) Collaborative Technologies
             4) Statistical Data Analysis
             5) Cybersecurity: Software and Systems
             6) IT Project Management and Entrepreneurship
             7) Learning Data Analytics
         
-        2nd Semester (All Electives - choose 4):
+        **2nd Semester (All Electives - choose 4):**
           1) Conversational Agents
           2) Optimization Techniques
           3) Hardware and Software Co-design
@@ -255,16 +260,16 @@ responses:
           6) Embedded and Cyber-Physical Systems
           7) Interactive Applications for Mobile Devices.
         
-        3rd Semester:
+        **3rd Semester:**
         • Master's Thesis.
         
-        You can read the detailed syllabus and description for each course here: https://ihst.csd.auth.gr/courses/
+        You can read the detailed syllabus and description for each course [here](https://ihst.csd.auth.gr/courses/).
 
   utter_ask_application_deadline_el:
-    - text: "Η περίοδος υποβολής των αιτήσεων ξεκινά συνήθως κατά τους ανοιξιάτικους μήνες (Μάιο - Ιούνιο) μετά τη δημοσίευση της επίσημης προκήρυξης. Για να δείτε την ακριβή τρέχουσα προθεσμία και να κατεβάσετε την προκήρυξη, παρακαλούμε ελέγξτε τις επίσημες ανακοινώσεις του ΠΜΣ εδώ: https://ihst.csd.auth.grhttps://ihst.csd.auth.gr/category/announcements/"
+    - text: "Η περίοδος υποβολής των αιτήσεων ξεκινά συνήθως κατά τους ανοιξιάτικους μήνες (Μάιο - Ιούνιο) μετά τη δημοσίευση της επίσημης προκήρυξης. Για να δείτε την ακριβή τρέχουσα προθεσμία και να κατεβάσετε την προκήρυξη, παρακαλούμε ελέγξτε τις επίσημες ανακοινώσεις του ΠΜΣ [εδώ](https://ihst.csd.auth.gr/category/announcements/)."
 
   utter_ask_application_deadline_en:
-    - text: "The application period usually starts during the spring months (May - June) following the publication of the official call for applications. To check the exact current deadline and download the call, please check the official MSc announcements here: https://ihst.csd.auth.gr/category/announcements/"
+    - text: "The application period usually starts during the spring months (May - June) following the publication of the official call for applications. To check the exact current deadline and download the call, please check the official MSc announcements [here](https://ihst.csd.auth.gr/category/announcements/)."
   
   utter_ask_attendance_mode_el:
     - text: "Το ΠΜΣ είναι κατά βάση διά ζώσης. Ωστόσο, υπάρχει η ευελιξία και η τεχνική δυνατότητα, εφόσον το επιθυμεί ο διδάσκων καθηγητής, κάποια μαθήματα ή διαλέξεις να πραγματοποιηθούν εξ αποστάσεως μέσω τηλεκπαίδευσης."

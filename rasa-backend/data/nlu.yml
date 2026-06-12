@@ -100,6 +100,18 @@ nlu:
     - Είναι όλα τα μαθήματα υποχρεωτικά;
     - Πώς γίνεται η επιλογή των μαθημάτων;
     - Πόσα μαθήματα διαλέγουμε σε κάθε εξάμηνο;
+    - ποια ειναι η δομη του προγραμματος σπουδων;
+    - πως ειναι δομημενο το μεταπτυχιακο;
+    - ποσα μαθηματα πρεπει να περασω για να παρω πτυχιο;
+    - υπαρχουν μαθηματα επιλογης;
+    - ποια ειναι υποχρεωτικα και ποια επιλογης;
+    - ποσα υποχρεωτικα μαθηματα εχει το προγραμμα;
+    - ποιος ειναι ο οδηγος σπουδων και η δομη του;
+    - κανονισμος σπουδων για τα μαθηματα
+    - ποσα μαθηματα δηλωνουμε στο πρωτο εξαμηνο;
+    - οριο μαθηματων ανα εξαμηνο
+    - ποσα ECTS χρειαζονται συνολικα;
+    - πρεπει να διαλεξω κατευθυνση;
 
 - intent: ask_curriculum_structure_en
   examples: |
@@ -108,6 +120,17 @@ nlu:
     - Are all courses compulsory?
     - How do we select courses?
     - How many courses do we choose per semester?
+    - What is the structure of the curriculum?
+    - How is the master's program structured?
+    - How many courses do I need to pass to graduate?
+    - Are there any elective courses?
+    - Which courses are mandatory and which are electives?
+    - How many compulsory courses are there?
+    - What are the degree requirements?
+    - Maximum number of courses per semester?
+    - How many ECTS credits do I need in total?
+    - Do I need to choose a specialization track?
+    - Curriculum guidelines and rules
 
 - intent: ask_courses_list_el
   examples: |
@@ -120,6 +143,15 @@ nlu:
     - Ποια ειναι τα μαθηματα;
     - Θέλω να μου πεις για τα μαθηματα.
     - οκ και ποια ειναι τα μαθηματα;
+    - δειξε μου τα μαθηματα
+    - ποια μαθηματα εχει το μεταπτυχιακο;
+    - τι διδασκόμαστε στο [α](semester) εξαμηνο;
+    - τι μαθηματα εχει το [χειμερινο](semester) εξαμηνο;
+    - ποια ειναι τα μαθηματα του [εαρινου](semester) εξαμηνου;
+    - λιστα μαθηματων
+    - καταλογος μαθηματων [β](semester) εξαμηνου
+    - τι κανουμε στο [3ο](semester) εξαμηνο;
+    - ποια μαθηματα εχει η κατευθυνση;
 
 - intent: ask_courses_list_en
   examples: |
@@ -132,6 +164,14 @@ nlu:
     - What are the courses?
     - Tell me about the courses.
     - ok and what are the courses?
+    - show me the courses
+    - list of courses
+    - course catalog
+    - what subjects do we have in the [1st](semester) semester?
+    - courses for the [winter](semester) semester
+    - what courses are taught in the [spring](semester) semester?
+    - can I see the course list?
+    - what are the modules for the [third](semester) semester?
 
 - intent: ask_application_deadline_el
   examples: |
@@ -142,6 +182,16 @@ nlu:
     - Έχει βγει η προκήρυξη για φέτος;
     - Μέχρι πότε δέχεται αιτήσεις η γραμματεία;
     - Πότε υποβάλλουμε τα δικαιολογητικά;
+    - μεχρι ποτε ειναι οι αιτησεις;
+    - ποτε κλεινουν οι αιτησεις για το μεταπτυχιακο;
+    - προθεσμια υποβολης δικαιολογητικων
+    - εχουν ξεκινησει οι εγγραφες;
+    - ποτε βγαινει η προκηρυξη;
+    - μεχρι ποτε προλαβαινω να καταθεσω τα χαρτια μου;
+    - εληξαν οι αιτησεις;
+    - ημερομηνιες για αιτησεις εγγραφης
+    - ποτε ειναι το dead line για τις αιτησεις;
+    - μπορω να κανω αιτηση τωρα;
 
 - intent: ask_application_deadline_en
   examples: |
@@ -151,6 +201,16 @@ nlu:
     - When is the application period?
     - Has the call for applications been released?
     - Until when does the secretariat accept applications?
+    - What is the deadline for submitting documents?
+    - when do applications close?
+    - is it too late to apply?
+    - application deadline for the master's program
+    - when can I submit my application?
+    - key dates for applications
+    - call for applications release date
+    - when is the last day to apply?
+    - registration open and close dates
+    - can I still send my documents?
 
 - intent: ask_attendance_mode_el
   examples: |
@@ -161,6 +221,15 @@ nlu:
     - Υπάρχει δυνατότητα για τηλεκπαίδευση;
     - Είναι e-learning το πρόγραμμα;
     - Πώς γίνονται οι παραδόσεις των μαθημάτων;
+    - ειναι υποχρεωτικη η παρουσια στη σχολη;
+    - γινονται εξ αποστασεως μαθηματα;
+    - ειναι υβριδικο το συστημα παρακολουθησης;
+    - χρειαζεται να ερχομαι στο πανεπιστημιο;
+    - γινονται τηλεδιασκεψεις;
+    - μπορω να το παρακολουθησω απο το σπιτι;
+    - εχει εργαστηρια που θελουν φυσικη παρουσια;
+    - γινεται μεσω ιντερνετ η παραδοση;
+    - παρακολουθηση μεσω teams η zoom;
 
 - intent: ask_attendance_mode_en
   examples: |
@@ -171,6 +240,15 @@ nlu:
     - Is there a distance learning option?
     - Is this an e-learning program?
     - How are the lectures delivered?
+    - Is attendance compulsory on site?
+    - Can I follow the program entirely online?
+    - Is it a hybrid master's program?
+    - Do I need to physically be in class?
+    - Are lectures streamed via Zoom or Teams?
+    - Can I study from home?
+    - Is physical presence required for exams or labs?
+    - Remote learning options
+    - Is it live streaming or pre-recorded videos?
 
 - intent: ask_study_intensity_el
   examples: |
@@ -250,6 +328,12 @@ nlu:
     - Άγχος με τις προθεσμίες, πρόλαβα;
     - Έχω αγχωθεί, έχασα την ημερομηνία για τις αιτήσεις;
     - Ανησυχώ μήπως έκλεισαν οι αιτήσεις
+    - με έπιασε πανικός, ξέχασα την προθεσμία!
+    - τρέχω και δεν φτάνω, έκλεισε το σύστημα;
+    - είμαι πολύ αγχωμένος με τις ημερομηνίες εγγραφής
+    - έχασα τη διορία, καταστράφηκα
+    - άργησα να κάνω αίτηση, υπάρχει ελπίδα;
+    - με πήρε ο ύπνος και έχασα το deadline
 
 - intent: stress_deadline_en
   examples: |
@@ -257,6 +341,12 @@ nlu:
     - I'm stressed about the application deadline
     - Did I miss the date for applications?
     - I am worried that the deadline has passed
+    - I'm freaking out, did I miss the registration?
+    - I panicked and forgot the application date
+    - I am so anxious about the deadlines
+    - I think I am too late, what can I do now?
+    - I completely missed the deadline, please help
+    - Stressed out about applying on time
 
 - intent: ask_contact_el
   examples: |
@@ -265,6 +355,16 @@ nlu:
     - Θέλω το email του διευθυντή
     - Στοιχεία επικοινωνίας
     - Πού μπορώ να στείλω email για πληροφορίες;
+    - ποιο ειναι το τηλεφωνο επικοινωνιας;
+    - υπαρχει καποιο email να στειλω;
+    - που βρισκεται το γραφειο της γραμματειας;
+    - ωρες κοινου για τη γραμματεια
+    - ποτε δεχεται ο διευθυντης;
+    - τηλεφωνα καθηγητων
+    - πώς μπορω να βρω τον υπευθυνο του μεταπτυχιακου;
+    - που στελνω τα δικαιολογητικα αν εχω απορια;
+    - mail γραμματειας
+    - contact details της σχολης
 
 - intent: ask_contact_en
   examples: |
@@ -273,17 +373,35 @@ nlu:
     - I want the director's email
     - Contact details
     - Where can I send an email for info?
+    - what is the secretariat's email address?
+    - how do I get in touch with the program coordinator?
+    - where is the secretariat office located?
+    - secretariat office hours for students
+    - phone number for the department
+    - department contact info
+    - how can I email the director?
+    - who should I contact for questions?
+    - university contact support
 
 - intent: ask_location_el
   examples: |
-    - Πού βρίσκεται η γραμματεία;
-    - Πού γίνονται τα μαθήματα;
+    - Που βρίσκεται η γραμματεία;
+    - Που γίνονται τα μαθήματα;
     - Ποια είναι η διεύθυνση του μεταπτυχιακού;
     - Σε ποιο κτίριο είστε;
-    - Πού πρέπει να έρθω για το μάθημα;
+    - Που πρέπει να έρθω για το μάθημα;
     - θελω να μου πεις για την τοποθεσια
     - ποια ειναι η τοποθεσια σας
     - που ειστε
+    - ποια ειναι η ακριβης διευθυνση;
+    - σε ποια αιθουσα γινονται οι παραδοσεις;
+    - που βρισκονται τα εργαστηρια;
+    - πώς μπορω να ερθω με τα μεσα μαζικης μεταφορας;
+    - ποιο λεωφορειο ή μετρο παει στη σχολη;
+    - υπαρχει καποιος χαρτης του καμπους;
+    - σε ποιον οροφο ειναι το γραφειο;
+    - που ειναι η πανεπιστημιουπολη;
+    - οδηγιες προσβασης για το κτιριο
 
 - intent: ask_location_en
   examples: |
@@ -295,6 +413,15 @@ nlu:
     - I want you to tell me about the location
     - What is your location?
     - Where are you?
+    - what is the exact address?
+    - which room or amphitheater is used for classes?
+    - where are the computer labs located?
+    - how can I get there by public transport?
+    - which bus or metro station is close to the campus?
+    - is there a campus map available?
+    - on which floor is the office?
+    - directions to the university building
+    - how do I access the department?
 
 - intent: thankyou_el
   examples: |
