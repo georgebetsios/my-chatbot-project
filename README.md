@@ -66,13 +66,13 @@ The interaction module is an asynchronous web wrapper built with React to proces
 
 ### Executing the Web Client:
 
-Navigate your terminal environment into the `/rasa-frontend` distribution folder and run the installation script to bundle necessary dependencies:
+1. Navigate your terminal environment into the `/rasa-frontend` distribution folder and run the installation script to bundle necessary dependencies:
     
     ```
         npm install
     ```
 
-Launch the local development asset compiler:
+2. Launch the local development asset compiler:
     
     ```
         npm run dev 
