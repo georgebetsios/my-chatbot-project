@@ -2,12 +2,19 @@ version: "3.1"
 
 rules:
 
-# ==================== ΕΛΛΗΝΙΚΟΙ ΚΑΝΟΝΕΣ ====================
+# ==================== GOODBYE ====================
 
-- rule: Say goodbye anytime the user says goodbye (GR)
+- rule: Πες αντίο στον χρήστη - Ελληνικά
   steps:
   - intent: goodbye_el
   - action: utter_goodbye_el
+
+- rule: Say goodbye anytime the user says goodbye - English
+  steps:
+  - intent: goodbye_en
+  - action: utter_goodbye_en 
+
+# ==================== CONTACT ====================
 
 - rule: Εμφάνιση Στοιχείων Επικοινωνίας - Ελληνικά
   steps:
@@ -15,36 +22,33 @@ rules:
   - action: utter_ask_contact_el
   - action: utter_anything_else_el
 
-- rule: Απάντηση σε Ευχαριστώ - Ελληνικά
-  steps:
-  - intent: thankyou_el
-  - action: utter_thankyou_el
-  - action: utter_anything_else_el
-
-- rule: Διαχείριση Προσβολής - Ελληνικά
-  steps:
-  - intent: insult_el
-  - action: utter_insult_el
-  - action: utter_anything_else_el
-
-# ==================== ΑΓΓΛΙΚΟΙ ΚΑΝΟΝΕΣ ====================
-
-- rule: Say goodbye anytime the user says goodbye (EN)
-  steps:
-  - intent: goodbye_en
-  - action: utter_goodbye_en
-
 - rule: Show Contact Details - English
   steps:
   - intent: ask_contact_en
   - action: utter_ask_contact_en
   - action: utter_anything_else_en
 
+# ==================== THANKYOU ====================
+
+- rule: Απάντηση σε Ευχαριστώ - Ελληνικά
+  steps:
+  - intent: thankyou_el
+  - action: utter_thankyou_el
+  - action: utter_anything_else_el
+
 - rule: Respond to Thank You - English
   steps:
   - intent: thankyou_en
   - action: utter_thankyou_en
   - action: utter_anything_else_en
+
+# ==================== INSULT ====================  
+
+- rule: Διαχείριση Προσβολής - Ελληνικά
+  steps:
+  - intent: insult_el
+  - action: utter_insult_el
+  - action: utter_anything_else_el
 
 - rule: Handle Insult - English
   steps:
@@ -59,6 +63,8 @@ rules:
   - intent: nlu_fallback
   - action: action_custom_fallback
 
+# ================= CHANGE LANGUAGE =================
+
 - rule: Αλλαγή γλώσσας σε Αγγλικά
   steps:
   - intent: change_lang_to_en
@@ -69,7 +75,7 @@ rules:
   - intent: change_lang_to_el
   - action: utter_change_lang_to_el
 
-# ==================== ΔΙΚΛΙΔΕΣ ΑΣΦΑΛΕΙΑΣ ΓΙΑ ΣΚΕΤΑ ΝΑΙ/ΟΧΙ ====================
+# ==================== SAFETY MEASURES FOR SIMPLE YES/NO QUESTIONS ====================
 
 - rule: Διαχείριση generic affirm (GR)
   steps:
@@ -81,12 +87,12 @@ rules:
   - intent: deny_el
   - action: utter_deny_el
 
-- rule: Διαχείριση generic affirm (EN)
+- rule: Management generic affirm (EN)
   steps:
   - intent: affirm_en
   - action: utter_affirm_en
 
-- rule: Διαχείριση generic deny (EN)
+- rule: Management generic deny (EN)
   steps:
   - intent: deny_en
   - action: utter_deny_en

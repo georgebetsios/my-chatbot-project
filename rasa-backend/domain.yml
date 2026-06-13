@@ -39,7 +39,6 @@ intents:
   - deny_anything_else_en
   - change_lang_to_en
   - change_lang_to_el
-  # 🌟 ΠΡΟΣΘΕΘΗΚΑΝ ΕΔΩ ΓΙΑ ΝΑ ΜΗΝ ΞΑΝΑΒΓΑΛΕΙ WARNING ΣΤΟ ΤΕΡΜΑΤΙΚΟ:
   - affirm_el
   - deny_el
   - affirm_en
@@ -53,7 +52,7 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      # ==================== ΕΛΛΗΝΙΚΑ INTENTS ====================
+      # ==================== GREEK INTENTS ====================
       - type: from_intent
         value: el
         intent: greet_el
@@ -112,7 +111,7 @@ slots:
         value: el
         intent: change_lang_to_el
 
-      # ==================== ΑΓΓΛΙΚΑ INTENTS ====================
+      # ==================== ENGLISH INTENTS ====================
       - type: from_intent
         value: en
         intent: greet_en
@@ -175,23 +174,32 @@ entities:
   - semester
 
 responses:
-  utter_greet_en:
-    - text: "Hello! Thank you for contacting us. How may I help you?"
+
+# ==================== GREETING ====================
 
   utter_greet_el:
     - text: "Γεια σας! Χαίρομαι που επικοινωνείτε μαζί μας. Τι θα θέλατε να μάθετε;"
 
-  utter_change_lang_to_en:
-    - text: "Yes, of course! We can continue in English. How can I help you?"
+  utter_greet_en:
+    - text: "Hello! Thank you for contacting us. How may I help you?"
+
+# ==================== CHANGE LANGUAGE ====================
 
   utter_change_lang_to_el:
     - text: "Φυσικά! Μπορούμε να συνεχίσουμε στα Ελληνικά. Πώς μπορώ να σας βοηθήσω;"
-    
+
+  utter_change_lang_to_en:
+    - text: "Yes, of course! We can continue in English. How can I help you?"
+
+# ==================== ADMISSION REQUIREMENTS ====================
+
   utter_ask_admission_requirements_el:
     - text: "Για την εισαγωγή στο ΠΜΣ απαιτείται πτυχίο Πληροφορικής, Μηχανικών ή συναφών επιστημών, πιστοποιητικό καλής γνώσης Αγγλικών (επίπεδο Β2), αναλυτική βαθμολογία, βιογραφικό σημείωμα και δύο συστατικές επιστολές."
 
   utter_ask_admission_requirements_en:
     - text: "Admission to the MSc requires a bachelor's degree in Computer Science, Engineering, or related fields, proof of English proficiency (B2 level), official transcripts, a CV, and two recommendation letters."
+
+# ==================== TUITION FEES ====================
 
   utter_ask_tuition_fees_el:
     - text: "Το συνολικό κόστος των διδάκτρων είναι 1.800€. Για την εγγραφή απαιτούνται 30€, ενώ το κόστος ανά εξάμηνο είναι 600€ (καταβάλλεται σε δύο δόσεις: 300€ στην αρχή και 300€ στο τέλος του εξαμήνου). Σημειώστε ότι παρέχεται πλήρης απαλλαγή από τα δίδακτρα στους φοιτητές που πληρούν τα θεσμοθετημένα οικονομικά ή κοινωνικά κριτήρια σύμφωνα με τον νόμο."
@@ -199,11 +207,15 @@ responses:
   utter_ask_tuition_fees_en:
     - text: "The total cost of tuition fees is €1,800. Registration requires €30, and the cost per semester is €600 (paid in two installments: €300 at the beginning and €300 at the end of the semester). Please note that a full tuition fee exemption is provided to students who meet the established financial or social criteria according to the law."
 
+# ==================== DURATION ====================
+
   utter_ask_duration_el:
     - text: "Η κανονική διάρκεια των σπουδών για την απονομή του Μεταπτυχιακού Διπλώματος είναι 3 ακαδημαϊκά εξάμηνα. Τα δύο πρώτα εξάμηνα περιλαμβάνουν την παρακολούθηση μαθημάτων, ενώ το τρίτο εξάμηνο είναι αφιερωμένο στην εκπόνηση της μεταπτυχιακής διπλευματικής εργασίας."
 
   utter_ask_duration_en:
     - text: "The normal duration of studies for the award of the Master's Degree is 3 academic semesters. The first two semesters include course attendance, while the third semester is dedicated to the preparation of the master's thesis."
+
+# ==================== CURRICULUM STRUCTURE ====================
 
   utter_ask_curriculum_structure_el:
     - text: |
@@ -224,6 +236,8 @@ responses:
         **2nd Semester:** You select 4 courses in total (All are electives from a list of 7 courses).
         
         **3rd Semester:** Dedicated exclusively to the Master's Thesis.
+
+# ==================== COURSES ====================
 
   utter_ask_courses_list_el:
     - text: |
@@ -279,29 +293,39 @@ responses:
         
         You can read the detailed syllabus and description for each course [here](https://ihst.csd.auth.gr/courses/).
 
+# ==================== APPLICATION DEADLINE ====================
+
   utter_ask_application_deadline_el:
     - text: "Η περίοδος υποβολής των αιτήσεων ξεκινά συνήθως κατά τους ανοιξιάτικους μήνες (Μάιο - Ιούνιο) μετά τη δημοσίευση της επίσημης προκήρυξης. Για να δείτε την ακριβή τρέχουσα προθεσμία και να κατεβάσετε την προκήρυξη, παρακαλούμε ελέγξτε τις επίσημες ανακοινώσεις του ΠΜΣ [εδώ](https://ihst.csd.auth.gr/category/announcements/)."
 
   utter_ask_application_deadline_en:
     - text: "The application period usually starts during the spring months (May - June) following the publication of the official call for applications. To check the exact current deadline and download the call, please check the official MSc announcements [here](https://ihst.csd.auth.gr/category/announcements/)."
   
+# ==================== ATTENDANCE ====================
+
   utter_ask_attendance_mode_el:
     - text: "Το ΠΜΣ είναι κατά βάση διά ζώσης. Ωστόσο, υπάρχει η ευελιξία και η τεχνική δυνατότητα, εφόσον το επιθυμεί ο διδάσκων καθηγητής, κάποια μαθήματα ή διαλέξεις να πραγματοποιηθούν εξ αποστάσεως μέσω τηλεκπαίδευσης."
 
   utter_ask_attendance_mode_en:
     - text: "The MSc is primarily face-to-face (on-campus). However, there is flexibility, and if the instructor/professor wishes so, certain courses or lectures can be conducted remotely via distance learning."
-  
+
+# ==================== PART-TIME STUDY ====================
+
   utter_ask_study_intensity_el:
     - text: "Ναι, παρέχεται η δυνατότητα μερικής φοίτησης για εργαζόμενους φοιτητές που αποδεδειγμένα εργάζονται τουλάχιστον 20 ώρες την εβδομάδα, καθώς και για άλλες ειδικές κατηγορίες (π.χ. λόγοι υγείας). Σε αυτή την περίπτωση, η διάρκεια σπουδών μπορεί να επιμηκυνθεί έως και το διπλάσιο της κανονικής (δηλαδή έως 6 εξάμηνα)."
 
   utter_ask_study_intensity_en:
     - text: "Yes, a part-time study option is available for working students who can prove they work at least 20 hours per week, as well as for other special categories (e.g., health reasons). In this case, the duration of studies can be extended up to twice the normal duration (meaning up to 6 semesters)."
 
+# ==================== BOT CHALLENGE ====================
+
   utter_iamabot_el:
     - text: "Είμαι ο ψηφιακός βοηθός (bot) του μεταπτυχιακού, βασισμένος στην πλατφόρμα Rasa!"
 
   utter_iamabot_en:
     - text: "I am the digital assistant (bot) for the MSc, powered by Rasa!"
+
+# ==================== FALLBACKS ====================
 
   utter_fallback_el:
     - text: "Λυπάμαι, δεν κατάλαβα τι εννοείτε. Μπορείτε να διατυπώσετε την ερώτησή σας διαφορετικά;"
@@ -312,11 +336,15 @@ responses:
   utter_fallback_both:
     - text: "Λυμαι, δεν κατάλαβα. / I'm sorry, I didn't understand."
 
+# ==================== STRESS DEADLINE ====================
+
   utter_stress_deadline_el:
     - text: "Μην ανησυχείτε καθόλου, το άγχος είναι απόλυτα φυσιολογικό! Οι προθεσμίες συχνά παίρνουν παράταση. Ακόμα κι αν έληξε, μπορείτε να στείλετε ένα email στη γραμματεία για να δείτε αν δέχονται εκπρόθεσμες αιτήσεις."
 
   utter_stress_deadline_en:
     - text: "Don't worry at all, it's completely normal to feel stressed! Deadlines often get extended. Even if it has passed, you can send an email to the secretariat to see if they accept late applications."
+
+# ==================== CONTACT ====================
 
   utter_ask_contact_el:
     - text: |
@@ -343,6 +371,8 @@ responses:
         **Program Director:**
         • Konofaos Nikolaos
         • Email: nkonofao@csd.auth.gr
+
+# ==================== LOCATION ====================
   
   utter_ask_location_el:
     - text: |
@@ -364,6 +394,8 @@ responses:
         **Course Location:**
         Lectures take place at the Department of Informatics Annex, 16 Ethnikis Antistaseos Str., Kalamaria (2nd floor).
 
+# ==================== THANK YOU ====================
+
   utter_thankyou_el:
     - text: "Παρακαλώ! Είμαι πάντα εδώ για να βοηθήσω! Χρειάζεστε κάτι άλλο;"
     - text: "Χαρά μου να βοηθήσω! Χρειάζεστε κάτι άλλο;"
@@ -372,11 +404,15 @@ responses:
     - text: "You're welcome! I'm always here to help! Do you need anything else?"
     - text: "Glad I could help! Do you need anything else?"
 
+# ==================== INSULT ====================
+
   utter_insult_el:
     - text: "Λυπάμαι που σας απογοήτευσα. Είμαι ακόμα ένας ψηφιακός βοηθός υπό εκπαίδευση! Πώς μπορώ να σας βοηθήσω καλύτερα ή τι πληροφορία ψάχνετε για το μεταπτυχιακό;"
 
   utter_insult_en:
     - text: "I'm sorry to disappoint you. I am still an AI assistant in training! How can I help you better, or what information are you looking for regarding the Master's program?"
+
+# ==================== SUGGEST FOR COURSES ====================
 
   utter_suggest_courses_list_el:
     - text: "Θέλετε να δούμε και την αναλυτική λίστα των μαθημάτων ανά εξάμηνο;"
@@ -394,6 +430,8 @@ responses:
         - title: "No, thanks"
           payload: "/deny_anything_else_en"
 
+# ==================== SUGGEST FOR TUITION FEES ====================
+
   utter_suggest_tuition_fees_el:
     - text: "Θέλετε να ενημερωθείτε και για το κόστος των διδάκτρων του προγράμματος?"
       buttons:
@@ -409,6 +447,8 @@ responses:
           payload: "/affirm_anything_else_en"
         - title: "No, thanks"
           payload: "/deny_anything_else_en"
+
+# ==================== SUGGEST FOR CONTACT ====================
 
   utter_suggest_contact_el:
     - text: "Θέλετε να σας δώσω και τα τηλέφωνα ή τα email επικοινωνίας της γραμματείας και του διευθυντή;"
@@ -426,6 +466,8 @@ responses:
         - title: "No, thanks"
           payload: "/deny_anything_else_en"
 
+# ==================== SUGGEST FOR CHECK DEADLINE ====================
+
   utter_suggest_check_deadline_el:
     - text: "Θέλετε να δούμε μαζί ποιες είναι οι επίσημες ημερομηνίες και αν προλαβαίνετε να κάνετε αίτηση;"
       buttons:
@@ -442,6 +484,8 @@ responses:
         - title: "No, thanks"
           payload: "/deny_anything_else_en"
 
+# ==================== SUGGEST FOR EMPLOYMENTS ====================
+
   utter_suggest_study_intensity_el:
     - text: "Γνωρίζετε ότι υπάρχει και η δυνατότητα μερικής φοίτησης (έως 6 εξάμηνα) για εργαζόμενους;"
       buttons:
@@ -457,6 +501,8 @@ responses:
           payload: "/affirm_anything_else_en"
         - title: "No, I'm fine"
           payload: "/deny_anything_else_en"
+
+# ==================== ASK FOR ANYTHING ELSE ====================
 
   utter_anything_else_el:
     - text: "Μπορώ να σας βοηθήσω με κάτι άλλο;"
@@ -485,6 +531,8 @@ responses:
 
   utter_goodbye_en:
     - text: "Glad I could help! Have a great day and best of luck with your studies!"
+
+# ==================== AFFIRM & DENY ====================
 
   utter_affirm_el:
     - text: "Έγινε! Μπορώ να σας βοηθήσω με κάτι άλλο;"

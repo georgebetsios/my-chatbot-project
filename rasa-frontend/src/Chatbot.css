@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. WRAPPER & LAUNCHER BUTTON (BUTTON ON PAGE)
+   1. WRAPPER & LAUNCHER BUTTON
    ========================================================================== */
 .chatbot-wrapper {
   position: fixed;
@@ -65,7 +65,7 @@
 }
 
 /* ==========================================================================
-   2. ICONS & ANIMATIONS
+   2. ICONS & KEYFRAME ANIMATIONS
    ========================================================================== */
 .svg-icon {
   width: 28px;
@@ -84,7 +84,6 @@
     opacity: 0;
     transform: translateX(10px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -96,7 +95,6 @@
     transform: scale(0.5);
     opacity: 0;
   }
-
   to {
     transform: scale(1);
     opacity: 1;
@@ -109,13 +107,11 @@
     opacity: 0.6;
     box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
   }
-
   50% {
     transform: scale(1.1);
     opacity: 1;
     box-shadow: 0 0 0 4px rgba(46, 204, 113, 0);
   }
-
   100% {
     transform: scale(0.9);
     opacity: 0.6;
@@ -124,7 +120,7 @@
 }
 
 /* ==========================================================================
-   3. CHAT WINDOW & HEADER
+   3. CHAT WINDOW & HEADER INTERFACE
    ========================================================================== */
 .chatbot-window {
   position: fixed;
@@ -191,7 +187,7 @@
 }
 
 /* ==========================================================================
-   4. MESSAGES AREA & CONTEXT CONTAINERS
+   4. MESSAGES DISPLAY AREA
    ========================================================================== */
 .chatbot-messages {
   flex: 1;
@@ -208,7 +204,6 @@
   flex-direction: column;
   width: 100%;
   max-width: 80%;
-  /* 👈 Εδώ κλειδώνουμε το 85% για όλο το πακέτο (bubble + κουμπιά) */
 }
 
 .message-container.bot {
@@ -224,10 +219,9 @@
 }
 
 /* ==========================================================================
-   5. MESSAGE BUBBLES & MARKDOWN LINKS
+   5. MESSAGE BUBBLES Styling
    ========================================================================== */
 .message-bubble {
-  padding: 12px 16px;
   border-radius: 16px;
   font-size: 14px;
   line-height: 1.5;
@@ -237,10 +231,10 @@
   word-break: break-word;
   overflow-wrap: break-word;
   width: fit-content;
-  /* 👈 Μαζεύει αυτόματα γύρω από το κείμενο */
 }
 
 .message-bubble.bot {
+  padding: 6px 16px;
   background-color: #e9ecef;
   color: #333;
   border-top-left-radius: 2px;
@@ -258,12 +252,15 @@
 }
 
 .message-bubble.user {
+  padding: 12px 16px;
   background-color: #7bc143;
   color: white;
   border-top-right-radius: 2px;
 }
 
-/* ==================== PROACTIVE BUTTONS (THE FIXED VERSION) ==================== */
+/* ==========================================================================
+   6. INTERACTIVE ACTION BUTTONS
+   ========================================================================== */
 .chat-buttons-container {
   display: flex;
   flex-direction: column;
@@ -282,8 +279,6 @@
   gap: 8px;
   background-color: #ffffff;
   color: #6aa83b;
-
-  /* 🌟 Σταθερό border που ΔΕΝ θα μετακινηθεί ή θα κρυφτεί */
   border: 2px solid #6aa83b;
   border-radius: 20px;
   padding: 8px 16px;
@@ -291,41 +286,30 @@
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-
-  /* 🌟 ΚΛΕΙΔΩΝΕΙ το background αυστηρά ΜΕΣΑ από το border */
   background-clip: padding-box;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .chat-action-button:hover {
-  /* 🟢 Το gradient μπαίνει κανονικά */
   background: linear-gradient(135deg, #8cd353 0%, #6aa83b 100%);
   color: #ffffff;
-
-  /* 🌟 ΤΟ ΜΥΣΤΙΚΟ: Στο hover, αλλάζουμε το border color στο πιο σκούρο πράσινο 
-     της βάσης του gradient (#6aa83b). Έτσι, ακόμα κι αν ο browser πάει να κάνει 
-     over-lap, το border θα είναι εκεί, ορατό και αιχμηρό! */
   border-color: #5b9432;
-
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(106, 168, 59, 0.3);
 }
 
-/* Το SVG εικονίδιο μέσα στο κουμπί */
 .btn-svg-icon {
   flex-shrink: 0;
   stroke: #6aa83b;
   transition: stroke 0.2s ease;
 }
 
-/* Όταν γίνεται hover στο κουμπί, το SVG γίνεται λευκό */
 .chat-action-button:hover .btn-svg-icon {
   stroke: #ffffff;
 }
 
 /* ==========================================================================
-   7. INPUT FORM & SEND BUTTON
+   7. INPUT FORM & SUBMISSION BUTTON
    ========================================================================== */
 .chatbot-input-form {
   display: flex;

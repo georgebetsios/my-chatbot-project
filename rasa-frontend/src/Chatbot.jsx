@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './Chatbot.css'; // Για να του δώσουμε ωραίο στυλ
+import './Chatbot.css'; 
 import logoImg from './assets/logo-master.jpg';
 import ReactMarkdown from 'react-markdown';
 
@@ -11,14 +11,15 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Αυτόματο scroll προς τα κάτω σε κάθε νέο μήνυμα
+  // Auto-scroll to the bottom whenever a new message is added
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Κοινό sender_id για να κρατάει το ίδιο session η Rasa στην ίδια συνομιλία
+  // Unique session ID to maintain a consistent conversation context in Rasa
   const SENDER_ID = "react_user_session";
 
+  // Handles sending text messages manually typed by the user
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -28,7 +29,7 @@ export default function Chatbot() {
     setInput("");
 
     try {
-      // Σύνδεση με το REST endpoint του Rasa
+      // Connect to the Rasa REST API endpoint
       const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -37,13 +38,13 @@ export default function Chatbot() {
 
       const data = await response.json();
 
-      // Αν το Rasa απαντήσει, πρόσθεσε τα μηνύματα ΚΑΙ τα κουμπιά τους
+      // Parse Rasa responses and store text along with any attached buttons
       if (data && data.length > 0) {
         data.forEach((msg) => {
           setMessages((prev) => [...prev, {
             text: msg.text || "Δεν επιστράφηκε κείμενο.",
             sender: "bot",
-            buttons: msg.buttons || [] // 👈 Εδώ αποθηκεύουμε τα buttons που στέλνει η Rasa
+            buttons: msg.buttons || [] 
           }]);
         });
       } else {
@@ -55,12 +56,11 @@ export default function Chatbot() {
     }
   };
 
+  // Handles quick-reply button clicks by displaying the title and passing the hidden payload to Rasa
   const handleButtonClick = async (buttonTitle, buttonPayload) => {
-    // 1. Εμφανίζουμε το κείμενο του κουμπιού σαν μήνυμα του χρήστη στο chat
     setMessages(prev => [...prev, { text: buttonTitle, sender: 'user' }]);
 
     try {
-      // 2. Στέλνουμε το κρυφό payload (π.χ. /affirm_el) στη Rasa χρησιμοποιώντας fetch
       const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -74,7 +74,7 @@ export default function Chatbot() {
           setMessages(prev => [...prev, {
             text: reply.text || "",
             sender: 'bot',
-            buttons: reply.buttons || [] // Κρατάμε τα επόμενα buttons αν υπάρχουν
+            buttons: reply.buttons || [] 
           }]);
         });
       }
@@ -84,20 +84,19 @@ export default function Chatbot() {
     }
   };
 
-  // 🌟 Συνάρτηση που επιστρέφει το κατάλληλο SVG ανάλογα με το payload ή τον τίτλο
+  // Returns the appropriate SVG icon based on the button's payload intent
   const getButtonIcon = (payload) => {
-    // Αν το payload περιέχει affirm (δηλαδή είναι "Ναι")
     if (payload.includes('affirm')) {
       return (
         <svg xmlns="http://www.w3.org/2000/svg"
-          width="16" /* 👈 Το μικραίνουμε ελάχιστα για να κάθεται κομψά στο κουμπί */
+          width="16" 
           height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2.5" /* 👈 camelCase */
-          strokeLinecap="round" /* 👈 camelCase */
-          strokeLinejoin="round" /* 👈 camelCase */
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
           className="btn-svg-icon">
           <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
           <path d="M7 10v12" />
@@ -105,7 +104,6 @@ export default function Chatbot() {
       );
     }
 
-    // Αν το payload περιέχει deny (δηλαδή είναι "Όχι")
     if (payload.includes('deny')) {
       return (
         <svg xmlns="http://www.w3.org/2000/svg"
@@ -129,17 +127,13 @@ export default function Chatbot() {
 
   return (
     <div className="chatbot-wrapper">
-      {/* Κουμπί Launcher */}
+      {/* Widget Toggle Launcher Button */}
       <button className="chatbot-launcher" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? (
-          /* ✖️ Μοντέρνο minimal X για το κλείσιμο */
           <svg className="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         ) : (
           <>
-            {/* Το κείμενο στα αριστερά */}
             <span className="launcher-tooltip">Ρωτήστε μας!</span>
-
-            {/* 💬 Premium SVG Chat Icon */}
             <svg xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -159,7 +153,7 @@ export default function Chatbot() {
         )}
       </button>
 
-      {/* Παράθυρο Chat */}
+      {/* Main Chat Interface Window */}
       {isOpen && (
         <div className="chatbot-window">
           <div className="chatbot-header">
@@ -172,10 +166,9 @@ export default function Chatbot() {
 
           <div className="chatbot-messages">
             {messages.map((msg, index) => (
-              /* 1. Ο γονέας (Container) που ελέγχει αν το πακέτο πάει αριστερά ή δεξιά */
               <div key={index} className={`message-container ${msg.sender}`}>
-
-                {/* 2. Το ίδιο το συννεφάκι (Bubble) που παίρνει το χρώμα */}
+                
+                {/* Dynamically render bot responses with Markdown, specifically handling target="_blank" links */}
                 <div className={`message-bubble ${msg.sender}`}>
                   {msg.sender === 'bot' ? (
                     <ReactMarkdown
@@ -190,7 +183,7 @@ export default function Chatbot() {
                   )}
                 </div>
 
-                {/* 3. Τα κουμπιά κάτω από το bubble, μόνο αν είναι bot και έχει κουμπιά */}
+                {/* Render quick-reply interactive option buttons below the message bubble */}
                 {msg.sender === 'bot' && msg.buttons && msg.buttons.length > 0 && (
                   <div className="chat-buttons-container">
                     {msg.buttons.map((btn, bIndex) => (
@@ -199,7 +192,6 @@ export default function Chatbot() {
                         className="chat-action-button"
                         onClick={() => handleButtonClick(btn.title, btn.payload)}
                       >
-                        {/* 🌟 ΕΔΩ ΜΠΑΙΝΕΙ ΤΟ SVG ΕΙΚΟΝΙΔΙΟ */}
                         {getButtonIcon(btn.payload)}
                         <span>{btn.title}</span>
                       </button>
