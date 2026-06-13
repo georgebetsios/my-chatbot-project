@@ -1,15 +1,11 @@
-# =====================================================================
-# 🟢 REACT FRONTEND (με προσθήκη rasa-frontend/ )
-# =====================================================================
+# ===== REACT FRONTEND =====
 rasa-frontend/node_modules/
 rasa-frontend/dist/
 rasa-frontend/dist-ssr/
 rasa-frontend/.env
 rasa-frontend/*.local
 
-# =====================================================================
-# 🤖 RASA BACKEND
-# =====================================================================
+# ===== RASA BACKEND =====
 rasa-backend/.rasa/
 rasa-backend/.rasa/*
 rasa-backend/.rasa/cache/
@@ -20,9 +16,8 @@ rasa-backend/__pycache__/
 rasa-backend/*.pyc
 rasa-backend/actions/__pycache__/
 
-# =====================================================================
-# 🪵 LOGS & DEBUGGERS (Καθολικά για όλο το project)
-# =====================================================================
+
+# ===== LOGS & DEBUGGERS =====
 logs/
 *.log
 npm-debug.log*
@@ -31,9 +26,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# =====================================================================
-# 💻 EDITOR FILES & SYSTEM LOGS (Καθολικά για όλο το project)
-# =====================================================================
+
+# ===== EDITOR FILES & SYSTEM LOGS =====
 .vscode/*
 !.vscode/extensions.json
 .idea/
